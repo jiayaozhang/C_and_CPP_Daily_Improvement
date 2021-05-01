@@ -27,3 +27,7 @@ TODO:
 5. 数据结构在c++d 应用
 6. C++ STL库中容器的应用以及底层实现
 7. C++STL算法sort和find算法
+
+
+## Difference Between VAO and VBO
+![image](https://user-images.githubusercontent.com/38579506/116784782-bef1bb80-aa9e-11eb-8a49-fbf9375e3783.png)
