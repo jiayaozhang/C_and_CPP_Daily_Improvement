@@ -1,33 +1,15 @@
-# learn_c_and_cpp
-Learn c and cpp language. I provide some random exercises when I am learning the cpp.  
+# learn_c_and_cpp  Ranges
 
+![image](https://user-images.githubusercontent.com/38579506/117034793-527bf400-ad0c-11eb-99ef-7978be095de4.png)
 
-## Resources
-1. reference: https://en.cppreference.com/
-2. tutorial: https://www.learncpp.com/
-3. Structure and Interpretation of Computer Programs: https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html (should take a look at this book whatever language you are learning)
-4. Stanford CS 106L lectures: http://web.stanford.edu/class/cs106l/lectures.html 
+![image](https://user-images.githubusercontent.com/38579506/117035417-f796cc80-ad0c-11eb-9518-b0468fa99db6.png)
 
-## Tricks and Skills
-1. firstly, we do the gcc test.cpp then ./a.out but we can add ./a.out > out.txt to save in a txt file and we can add ./a.out < input.txt to add an input file
-2. sometimes I prefer to use the linux system, so i ssh through the VS code. ssh zhangj0o@10.68.74.3 PS: the locked screen passwords
+![image](https://user-images.githubusercontent.com/38579506/117035567-20b75d00-ad0d-11eb-8121-29f22948549d.png)
 
-## 
-1. C++ static function https://en.cppreference.com/w/cpp/language/static
-2. C++ 虚函数原理  https://www.cnblogs.com/malecrab/p/5572730.html
-3. C++ 和 C 编译原理 https://www.cnblogs.com/miloyip/archive/2010/09/17/behind_cplusplus.html
-4. external C
+![image](https://user-images.githubusercontent.com/38579506/117035670-45133980-ad0d-11eb-97fe-9b6ef1042058.png)
 
+![image](https://user-images.githubusercontent.com/38579506/117036037-ad621b00-ad0d-11eb-8e77-3c0044857889.png)
 
-TODO:
-1. 虚函数和虚表
-2. c++内存管理
-3. 堆和栈的区别
-4. 智能指针
-5. 数据结构在c++d 应用
-6. C++ STL库中容器的应用以及底层实现
-7. C++STL算法sort和find算法
+![image](https://user-images.githubusercontent.com/38579506/117036129-c9fe5300-ad0d-11eb-9001-a992630a2008.png)
 
-
-## Difference Between VAO and VBO
-![image](https://user-images.githubusercontent.com/38579506/116784782-bef1bb80-aa9e-11eb-8a49-fbf9375e3783.png)
+![image](https://user-images.githubusercontent.com/38579506/117036619-4729c800-ad0e-11eb-8e35-3a7d65bca5c5.png)
