@@ -1,33 +1,20 @@
-# learn_c_and_cpp
-Learn c and cpp language. I provide some random exercises when I am learning the cpp.  
+# Enumerate()
 
+![image](https://user-images.githubusercontent.com/38579506/117053748-020f9100-ad22-11eb-851a-5b48383bc1a4.png)
 
-## Resources
-1. reference: https://en.cppreference.com/
-2. tutorial: https://www.learncpp.com/
-3. Structure and Interpretation of Computer Programs: https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html (should take a look at this book whatever language you are learning)
-4. Stanford CS 106L lectures: http://web.stanford.edu/class/cs106l/lectures.html 
+![image](https://user-images.githubusercontent.com/38579506/117053876-29fef480-ad22-11eb-91d8-ea01eb27c990.png)
 
-## Tricks and Skills
-1. firstly, we do the gcc test.cpp then ./a.out but we can add ./a.out > out.txt to save in a txt file and we can add ./a.out < input.txt to add an input file
-2. sometimes I prefer to use the linux system, so i ssh through the VS code. ssh zhangj0o@10.68.74.3 PS: the locked screen passwords
+![image](https://user-images.githubusercontent.com/38579506/117056427-f83b5d00-ad24-11eb-8e57-ae0da75370c0.png)
 
-## 
-1. C++ static function https://en.cppreference.com/w/cpp/language/static
-2. C++ 虚函数原理  https://www.cnblogs.com/malecrab/p/5572730.html
-3. C++ 和 C 编译原理 https://www.cnblogs.com/miloyip/archive/2010/09/17/behind_cplusplus.html
-4. external C
+![image](https://user-images.githubusercontent.com/38579506/117056548-1a34df80-ad25-11eb-9bc1-0601e4b931ae.png)
 
+![image](https://user-images.githubusercontent.com/38579506/117056780-5ec07b00-ad25-11eb-8f77-2b0d71b5948d.png)
 
-TODO:
-1. 虚函数和虚表
-2. c++内存管理
-3. 堆和栈的区别
-4. 智能指针
-5. 数据结构在c++d 应用
-6. C++ STL库中容器的应用以及底层实现
-7. C++STL算法sort和find算法
+![image](https://user-images.githubusercontent.com/38579506/117056955-8dd6ec80-ad25-11eb-815e-6f131ac7e2e3.png)
 
+![image](https://user-images.githubusercontent.com/38579506/117057056-ae06ab80-ad25-11eb-9df3-976f70fd0e0d.png)
 
-## Difference Between VAO and VBO
-![image](https://user-images.githubusercontent.com/38579506/116784782-bef1bb80-aa9e-11eb-8a49-fbf9375e3783.png)
+![image](https://user-images.githubusercontent.com/38579506/117057229-e0b0a400-ad25-11eb-9dd5-b2aaf44bd08b.png)
+
+![image](https://user-images.githubusercontent.com/38579506/117057264-e9a17580-ad25-11eb-88e5-a3e76933d2aa.png)
+
