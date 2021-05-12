@@ -30,7 +30,8 @@
   #include "stdafx.h"
   #define LEN 10
   
-  int len_foo () {
+  //常量表达式
+  constexpr int len_foo () {
       return 5;
       }
 
@@ -39,8 +40,10 @@
   //局部变量栈，在栈上开辟空间
   char arr1[10];
   char arr2[LEN];
-  int len=5;
-  char arr3[len];
+  const int len=5;
+  char arr3[len]; //编译器在运行期间才能确定该变量的大小，从而分配空间
+  
+  char arr5[len_foo()+5]; //前面加了constexpr后 变得合法了
   return 0;
  }
  ```
