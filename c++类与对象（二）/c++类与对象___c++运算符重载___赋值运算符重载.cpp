@@ -2,57 +2,47 @@
 using namespace std;
 #include<string>
 
-//左移运算符重载
+//重载关系运算符 可以让2个自定义类型对象进行对比操作
 
 class Person
 {
 public:
 
-	Person(int age)
+	Person(string name, int age)
 	{
-		m_Age = new int(age);
+		m_Name = name;
+		m_Age = age;
 	}
 
-	~Person()
+	//重载 ==号
+	bool operator==(Person& p)
 	{
-		if (m_Age != NULL)
+		if (this->m_Name == p.m_Name && this->m_Age == p.m_Age)
 		{
-			delete m_Age;
-			m_Age = NULL;
+			return true;
 		}
+		return false;
 	}
 
-	//赋值运算符重载
-	Person& operator=(Person& p)
-	{
-		if (m_Age != NULL)
-		{
-			delete m_Age;
-			m_Age = NULL;
-		}
-		//深拷贝
-		m_Age = new int(*p.m_Age);
+	string m_Name;
+	int m_Age;
 
-		return *this;
-	}
-
-	int* m_Age;
 };
 
 void test01()
 {
-	Person p1(18);
-	Person p2(20);
-	Person p3(30);
+	Person p1("Tom", 18);
 
-	p3 = p2 = p1; //赋值运算
+	Person p2("Tomy", 18);
 
-	cout << "p1的年龄为" << *p1.m_Age << endl;
-
-	cout << "p2的年龄为" << *p2.m_Age << endl;
-
-	cout << "p3的年龄为" << *p3.m_Age << endl;
-
+	if (p1 == p2)
+	{
+		cout << "p1 and p2 相等 ！" << endl;
+	}
+	else
+	{
+		cout << "p1 and p2 不相等 ！" << endl;
+	}
 }
 
 
