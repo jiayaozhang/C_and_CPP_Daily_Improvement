@@ -29,5 +29,3 @@ TODO:
 7. C++STL算法sort和find算法
 
 
-## Difference Between VAO and VBO
-![image](https://user-images.githubusercontent.com/38579506/116784782-bef1bb80-aa9e-11eb-8a49-fbf9375e3783.png)
