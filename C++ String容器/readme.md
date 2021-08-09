@@ -63,3 +63,12 @@ string中单个字符存取方式有两种
 ![image](https://user-images.githubusercontent.com/38579506/128695357-b486a008-f5bb-4364-bfd8-73c321e3388a.png)
 
 
+## 7. string子串
+
+功能描述：
+从字符串中获得想要的子串
+
+函数原型：
+
+![image](https://user-images.githubusercontent.com/38579506/128695992-9b029387-a5bc-42f3-899c-a5a3990d0fd5.png)
+
