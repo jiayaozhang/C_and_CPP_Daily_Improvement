@@ -1,45 +1,89 @@
 
-# STL 六大组件
+# Deque 容器
 
-## 1. 容器：  各种数据结构，如vector，list，deque, set, map等，用来存放数据
+## 1. Deque容器基本概念
 
-容器：置物之所也
-STL容器就是将运用最广泛的一些数据结构实现出来
-常用的数据结构：数组, 链表,树, 栈, 队列, 集合, 映射表等
-这些容器分为序列式容器和关联式容器两种:
-序列式容器:强调值的排序，序列式容器中的每个元素均有固定的位置。 
-关联式容器:二叉树结构，各元素之间没有严格的物理上的顺序关系
+功能：
+双端数组，可以对头端进行插入删除操作
 
+deque与vector区别：
+vector对于头部的插入删除效率低，数据量越大，效率越低
+deque相对而言，对头部的插入删除速度回比vector快
+vector访问元素时的速度会比deque快,这和两者内部实现有关
 
-## 2. 算法：  各种常用算法，如sort，find， copy， for_each等
-
-算法：问题之解法也
-有限的步骤，解决逻辑或数学上的问题，这一门学科我们叫做算法(Algorithms)
-算法分为:质变算法和非质变算法。
-质变算法：是指运算过程中会更改区间内的元素的内容。例如拷贝，替换，删除等等
-非质变算法：是指运算过程中不会更改区间内的元素内容，例如查找、计数、遍历、寻找极值等等
+![image](https://user-images.githubusercontent.com/38579506/128727189-a002b246-903e-436d-a3c0-a7a90b9548ab.png)
 
 
-## 3. 迭代器：扮演了容器与算法之间的胶合剂
+deque内部工作原理:
 
-迭代器：容器和算法之间粘合剂
-提供一种方法，使之能够依序寻访某个容器所含的各个元素，而又无需暴露该容器的内部表示方式。
-每个容器都有自己专属的迭代器
-迭代器使用非常类似于指针，初学阶段我们可以先理解迭代器为指针
+deque内部有个中控器，维护每段缓冲区中的内容，缓冲区中存放真实数据
+中控器维护的是每个缓冲区的地址，使得使用deque时像一片连续的内存空间
 
+![image](https://user-images.githubusercontent.com/38579506/128727248-5ca019a1-bacc-4319-aa0e-473e965c8f50.png)
 
-常用的容器中迭代器种类为双向迭代器，和随机访问迭代器
+deque容器的迭代器也是支持随机访问的
 
+## 2. Deque构造函数
 
-## 4. 仿函数：行为类似函数，可作为算法的某种策略
+功能：deque容器构造
 
+![image](https://user-images.githubusercontent.com/38579506/128727377-55ecca9e-037f-4eb5-8f4d-93c145823e3b.png)
 
+总结：deque容器和vector容器的构造方式几乎一致，灵活使用即可
 
-## 5. 适配器：一种用来修饰容器或者仿函数迭代器接口的东西
+## 3. Deque赋值操作
 
+功能：给deque进行赋值
 
+![image](https://user-images.githubusercontent.com/38579506/128727561-8a16b03c-3355-4a52-aed3-fd5b007dc553.png)
 
+总结：deque赋值操作也与vector相同，需熟练掌握
 
+## 3. Deque大小操作
 
-## 6. 空间配置器：负责空间的配置与管理
+功能：给deque容器的大小进行操作
 
+![image](https://user-images.githubusercontent.com/38579506/128727671-68b09d59-bdf7-4383-acef-3f78e8b66eed.png)
+
+![image](https://user-images.githubusercontent.com/38579506/128727700-671f88ee-ba81-4eae-ad8b-5307279ea28e.png)
+
+总结：
+deque没有容量的概念
+判断是否为空 --- empty
+返回元素个数 --- size
+重新指定个数 --- resize
+
+## 4. Deque插入和删除
+
+功能：给deque容器中插入和删除数据
+
+函数原型：
+
+![image](https://user-images.githubusercontent.com/38579506/128727861-a2f78ea9-80fb-4ce4-a275-6f2387ef2c80.png)
+
+总结：
+插入和删除提供的位置是迭代器！
+尾插 --- push_back
+尾删 --- pop_back
+头插 --- push_front
+头删 --- pop_front
+
+## 4. Deque数据存取
+
+功能：给deque中的数据的存取操作
+
+函数原型：
+![image](https://user-images.githubusercontent.com/38579506/128728003-d547a8c2-c997-40b6-a375-85deb98367ae.png)
+
+总结：
+除了用迭代器获取deque容器中元素，[ ]和at也可以
+front返回容器第一个元素
+back返回容器最后一个元素
+
+## 4. Deque排序
+
+功能：利用算法实现对deque容器进行排序
+
+算法： sort(iterator beg, iterator end) //对beg和end区间内元素进行排序
+
+总结：sort算法非常实用，使用时包含头文件 algorithm即可
