@@ -32,3 +32,5 @@ string管理char*所分配的内存，不用担心复制越界和取值越界等
 
 ![image](https://user-images.githubusercontent.com/38579506/128692185-96111252-7699-4dd8-8ed2-043b67015ba3.png)
 
+![image](https://user-images.githubusercontent.com/38579506/128693274-c745b9d8-1e8e-46af-9841-26c24c22eed6.png)
+
