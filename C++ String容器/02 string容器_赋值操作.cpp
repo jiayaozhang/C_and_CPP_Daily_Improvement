@@ -1,53 +1,53 @@
-//#include<iostream>
-//using namespace std;
-//#include <string>
-////string¸³Öµ²Ù×÷
-///*
-//- string& operator=(const char* s);             //char*ÀàĞÍ×Ö·û´® ¸³Öµ¸øµ±Ç°µÄ×Ö·û´®
-//- string& operator=(const string &s);         //°Ñ×Ö·û´®s¸³¸øµ±Ç°µÄ×Ö·û´®
-//- string& operator=(char c);                          //×Ö·û¸³Öµ¸øµ±Ç°µÄ×Ö·û´®
-//- string& assign(const char *s);                  //°Ñ×Ö·û´®s¸³¸øµ±Ç°µÄ×Ö·û´®
-//- string& assign(const char *s, int n);     //°Ñ×Ö·û´®sµÄÇ°n¸ö×Ö·û¸³¸øµ±Ç°µÄ×Ö·û´®
-//- string& assign(const string &s);              //°Ñ×Ö·û´®s¸³¸øµ±Ç°×Ö·û´®
-//- string& assign(int n, char c);                  //ÓÃn¸ö×Ö·ûc¸³¸øµ±Ç°×Ö·û´®
-//*/
-//
-//void test01()
-//{
-//	string str1;
-//	str1 = "hello world";
-//	cout << "str1 = " << str1 << endl;
-//
-//	string str2;
-//	str2 = str1;
-//	cout << "str2 = " << str2 << endl;
-//
-//	string str3;
-//	str3 = 'a';
-//	cout << "str3 = " << str3 << endl;
-//
-//	string str4;
-//	str4.assign("hello C++");
-//	cout << "str4 = " << str4 << endl;
-//
-//	string str5;
-//	str5.assign("hello C++", 5);
-//	cout << "str5 = " << str5 << endl;
-//
-//	string str6;
-//	str6.assign(str5);
-//	cout << "str6 = " << str6 << endl;
-//
-//	string str7;
-//	str7.assign(10, 'w');
-//	cout << "str7 = " << str7 << endl;
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <string>
+//stringèµ‹å€¼æ“ä½œ
+/*
+- string& operator=(const char* s);             //char*ç±»å‹å­—ç¬¦ä¸² èµ‹å€¼ç»™å½“å‰çš„å­—ç¬¦ä¸²
+- string& operator=(const string &s);         //æŠŠå­—ç¬¦ä¸²sèµ‹ç»™å½“å‰çš„å­—ç¬¦ä¸²
+- string& operator=(char c);                          //å­—ç¬¦èµ‹å€¼ç»™å½“å‰çš„å­—ç¬¦ä¸²
+- string& assign(const char *s);                  //æŠŠå­—ç¬¦ä¸²sèµ‹ç»™å½“å‰çš„å­—ç¬¦ä¸²
+- string& assign(const char *s, int n);     //æŠŠå­—ç¬¦ä¸²sçš„å‰nä¸ªå­—ç¬¦èµ‹ç»™å½“å‰çš„å­—ç¬¦ä¸²
+- string& assign(const string &s);              //æŠŠå­—ç¬¦ä¸²sèµ‹ç»™å½“å‰å­—ç¬¦ä¸²
+- string& assign(int n, char c);                  //ç”¨nä¸ªå­—ç¬¦cèµ‹ç»™å½“å‰å­—ç¬¦ä¸²
+*/
+
+void test01()
+{
+	string str1;
+	str1 = "hello world";
+	cout << "str1 = " << str1 << endl;
+
+	string str2;
+	str2 = str1;
+	cout << "str2 = " << str2 << endl;
+
+	string str3;
+	str3 = 'a';
+	cout << "str3 = " << str3 << endl;
+
+	string str4;
+	str4.assign("hello C++");
+	cout << "str4 = " << str4 << endl;
+
+	string str5;
+	str5.assign("hello C++", 5);
+	cout << "str5 = " << str5 << endl;
+
+	string str6;
+	str6.assign(str5);
+	cout << "str6 = " << str6 << endl;
+
+	string str7;
+	str7.assign(10, 'w');
+	cout << "str7 = " << str7 << endl;
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
