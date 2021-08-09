@@ -47,3 +47,14 @@ vector容器的迭代器是支持随机访问的迭代器
 2. 返回元素个数 --- size
 3. 返回容器容量 --- capacity
 4. 重新指定大小 --- resize
+
+
+## vector数据存取
+
+功能描述： 对vector中的数据的存取操作
+
+函数原型：
+
+![image](https://user-images.githubusercontent.com/38579506/128726404-70f404b0-a61a-45c2-8956-25df4c775e4c.png)
+
+
