@@ -1,37 +1,37 @@
-//#include<iostream>
-//using namespace std;
-//#include <string>
-////stringµÄ¹¹Ôìº¯Êı
-//
-///*
-//- string();          				//´´½¨Ò»¸ö¿ÕµÄ×Ö·û´® ÀıÈç: string str;
-//  string(const char* s);	        //Ê¹ÓÃ×Ö·û´®s³õÊ¼»¯
-//- string(const string& str);       //Ê¹ÓÃÒ»¸östring¶ÔÏó³õÊ¼»¯ÁíÒ»¸östring¶ÔÏó
-//- string(int n, char c);           //Ê¹ÓÃn¸ö×Ö·ûc³õÊ¼»¯
-//*/
-//
-//void test01()
-//{
-//	string s1; //Ä¬ÈÏ¹¹Ôì
-//
-//	const char * str = "hello world";
-//	string s2(str);
-//
-//	cout << "s2 = " << s2 << endl;
-//
-//	string s3(s2);
-//	cout << "s3 = " << s3 << endl;
-//
-//	string s4(10, 'a');
-//	cout << "s4 = " << s4 << endl;
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <string>
+//stringçš„æ„é€ å‡½æ•°
+
+/*
+- string();          				//åˆ›å»ºä¸€ä¸ªç©ºçš„å­—ç¬¦ä¸² ä¾‹å¦‚: string str;
+ string(const char* s);	        //ä½¿ç”¨å­—ç¬¦ä¸²såˆå§‹åŒ–
+- string(const string& str);       //ä½¿ç”¨ä¸€ä¸ªstringå¯¹è±¡åˆå§‹åŒ–å¦ä¸€ä¸ªstringå¯¹è±¡
+- string(int n, char c);           //ä½¿ç”¨nä¸ªå­—ç¬¦cåˆå§‹åŒ–
+*/
+
+void test01()
+{
+	string s1; //é»˜è®¤æ„é€ 
+
+	const char * str = "hello world";
+	string s2(str);
+
+	cout << "s2 = " << s2 << endl;
+
+	string s3(s2);
+	cout << "s3 = " << s3 << endl;
+
+	string s4(10, 'a');
+	cout << "s4 = " << s4 << endl;
+}
+
+int main() {
+
+	test01();
+
+
+	system("pause");
+
+	return 0;
+}
