@@ -1,54 +1,54 @@
-//#include<iostream>
-//using namespace std;
-//#include <vector>
-//#include <algorithm> //±ê×¼Ëã·¨Í·ÎÄ¼ş
-//
-////vectorÈİÆ÷´æ·ÅÄÚÖÃÊı¾İÀàĞÍ
-//
-//void myPrint(int val)
-//{
-//	cout << val << endl;
-//}
-//
-//void test01()
-//{
-//	//´´½¨ÁËÒ»¸övectorÈİÆ÷£¬Êı×é
-//	vector<int> v;
-//
-//	//ÏòÈİÆ÷ÖĞ²åÈëÊı¾İ
-//	v.push_back(10);
-//	v.push_back(20);
-//	v.push_back(30);
-//	v.push_back(40);
-//
-//	//Í¨¹ıµü´úÆ÷·ÃÎÊÈİÆ÷ÖĞµÄÊı¾İ
-//	//vector<int>::iterator itBegin = v.begin(); //ÆğÊ¼µü´úÆ÷  Ö¸ÏòÈİÆ÷ÖĞµÚÒ»¸öÔªËØ
-//	//vector<int>::iterator itEnd = v.end();  //½áÊøµü´úÆ÷ Ö¸ÏòÈİÆ÷ÖĞ×îºóÒ»¸öÔªËØµÄÏÂÒ»¸öÎ»ÖÃ
-//
-//	////µÚÒ»ÖÖ±éÀú·½Ê½
-//	//while (itBegin != itEnd)
-//	//{
-//	//	cout << *itBegin << endl;
-//	//	itBegin++;
-//	//}
-//
-//
-//	//µÚ¶şÖÖ±éÀú·½Ê½
-//	//for (vector<int>::iterator it = v.begin(); it != v.end();it++)
-//	//{
-//	//	cout << *it << endl;
-//	//}
-//
-//	//µÚÈıÖÖ±éÀú·½Ê½  ÀûÓÃSTLÌá¹©±éÀúËã·¨
-//	for_each(v.begin(), v.end(), myPrint);
-//
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <vector>
+#include <algorithm> //æ ‡å‡†ç®—æ³•å¤´æ–‡ä»¶
+
+//vectorå®¹å™¨å­˜æ”¾å†…ç½®æ•°æ®ç±»å‹
+
+void myPrint(int val)
+{
+	cout << val << endl;
+}
+
+void test01()
+{
+	//åˆ›å»ºäº†ä¸€ä¸ªvectorå®¹å™¨ï¼Œæ•°ç»„
+	vector<int> v;
+
+	//å‘å®¹å™¨ä¸­æ’å…¥æ•°æ®
+	v.push_back(10);
+	v.push_back(20);
+	v.push_back(30);
+	v.push_back(40);
+
+	//é€šè¿‡è¿­ä»£å™¨è®¿é—®å®¹å™¨ä¸­çš„æ•°æ®
+	//vector<int>::iterator itBegin = v.begin(); //èµ·å§‹è¿­ä»£å™¨  æŒ‡å‘å®¹å™¨ä¸­ç¬¬ä¸€ä¸ªå…ƒç´ 
+	//vector<int>::iterator itEnd = v.end();  //ç»“æŸè¿­ä»£å™¨ æŒ‡å‘å®¹å™¨ä¸­æœ€åä¸€ä¸ªå…ƒç´ çš„ä¸‹ä¸€ä¸ªä½ç½®
+
+	////ç¬¬ä¸€ç§éå†æ–¹å¼
+	//while (itBegin != itEnd)
+	//{
+	//	cout << *itBegin << endl;
+	//	itBegin++;
+	//}
+
+
+	//ç¬¬äºŒç§éå†æ–¹å¼
+	//for (vector<int>::iterator it = v.begin(); it != v.end();it++)
+	//{
+	//	cout << *it << endl;
+	//}
+
+	//ç¬¬ä¸‰ç§éå†æ–¹å¼  åˆ©ç”¨STLæä¾›éå†ç®—æ³•
+	for_each(v.begin(), v.end(), myPrint);
+
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
