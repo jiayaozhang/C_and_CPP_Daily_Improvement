@@ -1,33 +1,33 @@
-//#include<iostream>
-//using namespace std;
-//
-////×Ö·û´®±È½Ï
-//
-//void test01()
-//{
-//	string str1 = "hello";
-//	string str2 = "xello";
-//
-//	if (str1.compare(str2) == 0)
-//	{
-//		cout << "str1 µÈÓÚ str2" << endl;
-//	}
-//	else if (str1.compare(str2) > 0)
-//	{
-//		cout << "str1 ´óÓÚ str2" << endl;
-//	}
-//	else
-//	{
-//		cout << "str1 Ð¡ÓÚ str2" << endl;
-//	}
-//
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+
+//å­—ç¬¦ä¸²æ¯”è¾ƒ
+
+void test01()
+{
+	string str1 = "hello";
+	string str2 = "xello";
+
+	if (str1.compare(str2) == 0)
+	{
+		cout << "str1 ç­‰äºŽ str2" << endl;
+	}
+	else if (str1.compare(str2) > 0)
+	{
+		cout << "str1 å¤§äºŽ str2" << endl;
+	}
+	else
+	{
+		cout << "str1 å°äºŽ str2" << endl;
+	}
+
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
