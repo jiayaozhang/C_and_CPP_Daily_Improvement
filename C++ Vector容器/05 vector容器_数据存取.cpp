@@ -1,42 +1,42 @@
-//#include<iostream>
-//using namespace std;
-//#include <vector>
-////vectorÈİÆ÷ Êı¾İ´æÈ¡
-//
-//void test01()
-//{
-//	vector<int>v1;
-//	for (int i = 0; i < 10; i++)
-//	{
-//		v1.push_back(i);
-//	}
-//
-//	//ÀûÓÃ[]·½Ê½·ÃÎÊÊı×éÖĞÔªËØ
-//	for (int i = 0; i < v1.size(); i++)
-//	{
-//		cout << v1[i] << " ";
-//	}
-//	cout << endl;
-//
-//	//ÀûÓÃat·½Ê½·ÃÎÊÔªËØ
-//	for (int i = 0; i < v1.size(); i++)
-//	{
-//		cout << v1.at(i) << " ";
-//	}
-//	cout << endl;
-//
-//	//»ñÈ¡µÚÒ»¸öÔªËØ
-//	cout << "µÚÒ»¸öÔªËØÎª£º " << v1.front() << endl;
-//
-//	//»ñÈ¡×îºóÒ»¸öÔªËØ
-//	cout << "×îºóÒ»¸öÔªËØÎª£º " << v1.back() << endl;
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <vector>
+//vectorå®¹å™¨ æ•°æ®å­˜å–
+
+void test01()
+{
+	vector<int>v1;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+
+	//åˆ©ç”¨[]æ–¹å¼è®¿é—®æ•°ç»„ä¸­å…ƒç´ 
+	for (int i = 0; i < v1.size(); i++)
+	{
+		cout << v1[i] << " ";
+	}
+	cout << endl;
+
+	//åˆ©ç”¨atæ–¹å¼è®¿é—®å…ƒç´ 
+	for (int i = 0; i < v1.size(); i++)
+	{
+		cout << v1.at(i) << " ";
+	}
+	cout << endl;
+
+	//è·å–ç¬¬ä¸€ä¸ªå…ƒç´ 
+	cout << "ç¬¬ä¸€ä¸ªå…ƒç´ ä¸ºï¼š " << v1.front() << endl;
+
+	//è·å–æœ€åä¸€ä¸ªå…ƒç´ 
+	cout << "æœ€åä¸€ä¸ªå…ƒç´ ä¸ºï¼š " << v1.back() << endl;
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
