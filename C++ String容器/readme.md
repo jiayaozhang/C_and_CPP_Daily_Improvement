@@ -24,3 +24,11 @@ string管理char*所分配的内存，不用担心复制越界和取值越界等
 
 ![image](https://user-images.githubusercontent.com/38579506/128688747-e0704ade-9923-403f-9464-9b59dbe154d1.png)
 
+## 3. string查找和替换
+
+功能描述：
+1. 查找： 查找指定字符串是否存在
+2. 替换： 在指定的位置替换字符串
+
+![image](https://user-images.githubusercontent.com/38579506/128688747-e0704ade-9923-403f-9464-9b59dbe154d1.png)
+
