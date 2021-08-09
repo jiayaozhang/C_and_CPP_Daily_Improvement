@@ -32,15 +32,13 @@ vector容器的迭代器是支持随机访问的迭代器
 函数原型：
 
 ![image](https://user-images.githubusercontent.com/38579506/128700362-b1764d06-6964-4399-8b5b-c106945c0727.png)
-
 ![image](https://user-images.githubusercontent.com/38579506/128700379-dc1eb206-469a-4b9f-ba16-ecbcc3c54367.png)
 
 总结： vector赋值方式比较简单，使用operator=，或者assign都可以
 
-## 函数原型
+## vector容量和大小
 
-![image](https://user-images.githubusercontent.com/38579506/128698452-2b323200-b905-4819-a72e-f3d84208910e.png)
+功能描述： 对vector容器的容量和大小操作
 
-## 函数原型
+![image](https://user-images.githubusercontent.com/38579506/128701310-abda8009-2558-4ed2-8237-9e5f64c8445a.png)
 
-![image](https://user-images.githubusercontent.com/38579506/128698452-2b323200-b905-4819-a72e-f3d84208910e.png)
