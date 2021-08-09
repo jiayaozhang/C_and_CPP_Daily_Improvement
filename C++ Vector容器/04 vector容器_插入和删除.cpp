@@ -1,67 +1,67 @@
-//#include<iostream>
-//using namespace std;
-//#include <vector>
-//
-////vector²åÈëºÍÉ¾³ı
-///*
-//- push_back(ele);                                         //Î²²¿²åÈëÔªËØele
-//- pop_back();                                                //É¾³ı×îºóÒ»¸öÔªËØ
-//- insert(const_iterator pos, ele);        //µü´úÆ÷Ö¸ÏòÎ»ÖÃpos²åÈëÔªËØele
-//- insert(const_iterator pos, int count,ele);//µü´úÆ÷Ö¸ÏòÎ»ÖÃpos²åÈëcount¸öÔªËØele
-//- erase(const_iterator pos);                     //É¾³ıµü´úÆ÷Ö¸ÏòµÄÔªËØ
-//- erase(const_iterator start, const_iterator end);//É¾³ıµü´úÆ÷´Óstartµ½endÖ®¼äµÄÔªËØ
-//- clear();                                                        //É¾³ıÈİÆ÷ÖĞËùÓĞÔªËØ
-//*/
-//
-//void printVector(vector<int>&v)
-//{
-//	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//}
-//
-//void test01()
-//{
-//	vector<int>v1;
-//	//Î²²å 
-//	v1.push_back(10);
-//	v1.push_back(20);
-//	v1.push_back(30);
-//	v1.push_back(40);
-//	v1.push_back(50);
-//
-//	//±éÀú
-//	printVector(v1);
-//
-//
-//	//Î²É¾
-//	v1.pop_back();
-//	printVector(v1);
-//
-//	//²åÈë  µÚÒ»¸ö²ÎÊıÊÇµü´úÆ÷
-//	v1.insert(v1.begin(), 100);
-//	printVector(v1);
-//
-//	v1.insert(v1.begin(), 2, 1000);
-//	printVector(v1);
-//
-//	//É¾³ı ²ÎÊıÒ²ÊÇµü´úÆ÷
-//	v1.erase(v1.begin());
-//	printVector(v1);
-//
-//	//Çå¿Õ
-//	//v1.erase(v1.begin(), v1.end());
-//	v1.clear();
-//	printVector(v1);
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <vector>
+
+//vectoræ’å…¥å’Œåˆ é™¤
+/*
+- push_back(ele);                                         //å°¾éƒ¨æ’å…¥å…ƒç´ ele
+- pop_back();                                                //åˆ é™¤æœ€åä¸€ä¸ªå…ƒç´ 
+- insert(const_iterator pos, ele);        //è¿­ä»£å™¨æŒ‡å‘ä½ç½®posæ’å…¥å…ƒç´ ele
+- insert(const_iterator pos, int count,ele);//è¿­ä»£å™¨æŒ‡å‘ä½ç½®posæ’å…¥countä¸ªå…ƒç´ ele
+- erase(const_iterator pos);                     //åˆ é™¤è¿­ä»£å™¨æŒ‡å‘çš„å…ƒç´ 
+- erase(const_iterator start, const_iterator end);//åˆ é™¤è¿­ä»£å™¨ä»startåˆ°endä¹‹é—´çš„å…ƒç´ 
+- clear();                                                        //åˆ é™¤å®¹å™¨ä¸­æ‰€æœ‰å…ƒç´ 
+*/
+
+void printVector(vector<int>&v)
+{
+	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+void test01()
+{
+	vector<int>v1;
+	//å°¾æ’ 
+	v1.push_back(10);
+	v1.push_back(20);
+	v1.push_back(30);
+	v1.push_back(40);
+	v1.push_back(50);
+
+	//éå†
+	printVector(v1);
+
+
+	//å°¾åˆ 
+	v1.pop_back();
+	printVector(v1);
+
+	//æ’å…¥  ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯è¿­ä»£å™¨
+	v1.insert(v1.begin(), 100);
+	printVector(v1);
+
+	v1.insert(v1.begin(), 2, 1000);
+	printVector(v1);
+
+	//åˆ é™¤ å‚æ•°ä¹Ÿæ˜¯è¿­ä»£å™¨
+	v1.erase(v1.begin());
+	printVector(v1);
+
+	//æ¸…ç©º
+	//v1.erase(v1.begin(), v1.end());
+	v1.clear();
+	printVector(v1);
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
