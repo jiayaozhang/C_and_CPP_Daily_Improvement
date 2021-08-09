@@ -1,50 +1,50 @@
-//#include<iostream>
-//using namespace std;
-//#include <string>
-//
-////×Ö·û´®²éÕÒºÍÌæ»»
-//
-////1¡¢²éÕÒ
-//void test01()
-//{
-//	string str1 = "abcdefgde";
-//
-//	int pos = str1.find("de");
-//
-//	if (pos == -1)
-//	{
-//		cout << "Î´ÕÒµ½×Ö·û´®" << endl;
-//	}
-//	else
-//	{
-//		cout << "ÕÒµ½×Ö·û´®£¬pos = " << pos << endl;
-//	}
-//	
-//	//rfind ºÍfindÇø±ğ
-//	//rfind´ÓÓÒÍù×ó²éÕÒ   find´Ó×óÍùÓÒ²éÕÒ
-//	pos = str1.rfind("de");
-//
-//	cout << "pos = " << pos << endl;
-//}
-//
-////2¡¢Ìæ»»
-//void test02()
-//{
-//	string str1 = "abcdefg";
-//
-//	//´Ó 1ºÅÎ»ÖÃÆğ 3¸ö×Ö·û Ìæ»»Îª"1111"
-//	str1.replace(1, 3, "1111");
-//
-//	cout << "str1 = " << str1 << endl;
-//}
-//
-//int main() {
-//
-//	//test01();
-//
-//	test02();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <string>
+
+//å­—ç¬¦ä¸²æŸ¥æ‰¾å’Œæ›¿æ¢
+
+//1ã€æŸ¥æ‰¾
+void test01()
+{
+	string str1 = "abcdefgde";
+
+	int pos = str1.find("de");
+
+	if (pos == -1)
+	{
+		cout << "æœªæ‰¾åˆ°å­—ç¬¦ä¸²" << endl;
+	}
+	else
+	{
+		cout << "æ‰¾åˆ°å­—ç¬¦ä¸²ï¼Œpos = " << pos << endl;
+	}
+	
+	//rfind å’ŒfindåŒºåˆ«
+	//rfindä»å³å¾€å·¦æŸ¥æ‰¾   findä»å·¦å¾€å³æŸ¥æ‰¾
+	pos = str1.rfind("de");
+
+	cout << "pos = " << pos << endl;
+}
+
+//2ã€æ›¿æ¢
+void test02()
+{
+	string str1 = "abcdefg";
+
+	//ä» 1å·ä½ç½®èµ· 3ä¸ªå­—ç¬¦ æ›¿æ¢ä¸º"1111"
+	str1.replace(1, 3, "1111");
+
+	cout << "str1 = " << str1 << endl;
+}
+
+int main() {
+
+	//test01();
+
+	test02();
+
+	system("pause");
+
+	return 0;
+}
