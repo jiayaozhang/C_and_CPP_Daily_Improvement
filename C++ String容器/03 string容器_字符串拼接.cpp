@@ -1,58 +1,58 @@
-//#include<iostream>
-//using namespace std;
-//#include <string>
-//
-////string×Ö·û´®Æ´½Ó
-///*
-//- string& operator+=(const char* str);                   //ÖØÔØ+=²Ù×÷·û
-//- string& operator+=(const char c);                         //ÖØÔØ+=²Ù×÷·û
-//- string& operator+=(const string& str);                //ÖØÔØ+=²Ù×÷·û
-//- string& append(const char *s);                               //°Ñ×Ö·û´®sÁ¬½Óµ½µ±Ç°×Ö·û´®½áÎ²
-//- string& append(const char *s, int n);                 //°Ñ×Ö·û´®sµÄÇ°n¸ö×Ö·ûÁ¬½Óµ½µ±Ç°×Ö·û´®½áÎ²
-//- string& append(const string &s);                           //Í¬operator+=(const string& str)
-//- string& append(const string &s, int pos, int n);//×Ö·û´®sÖĞ´Ópos¿ªÊ¼µÄn¸ö×Ö·ûÁ¬½Óµ½×Ö·û´®½áÎ²
-//*/
-//
-//
-//void test01()
-//{
-//	string str1 = "ÎÒ";
-//
-//	str1 += "°®ÍæÓÎÏ·";
-//
-//	cout << "str1 = " << str1 << endl;
-//
-//	str1 += ':';
-//
-//	cout << "str1 = " << str1 << endl;
-//
-//	string str2 = "LOL DNF";
-//
-//	str1 += str2;
-//	cout << "str1 = " << str1 << endl;
-//
-//
-//	string str3 = "I";
-//	str3.append(" love ");
-//	cout << "str3 = " << str3 << endl;
-//
-//	str3.append("game abcde", 4);
-//	// I love game
-//	cout << "str3 = " << str3 << endl;
-//
-//	//str3.append(str2);
-//
-//	//str3.append(str2, 0, 3); //Ö»½ØÈ¡µ½LOL
-//	str3.append(str2,4,3); // Ö»½ØÈ¡ DNF£¬ ²ÎÊı2 ´ÓÄÄ¸öÎ»ÖÃ¿ªÊ¼½ØÈ¡£¬²ÎÊı3 ½ØÈ¡×Ö·û¸öÊı
-//	// I love game LOL DNF
-//	cout << "str3 = " << str3 << endl;
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <string>
+
+//stringå­—ç¬¦ä¸²æ‹¼æ¥
+/*
+- string& operator+=(const char* str);                   //é‡è½½+=æ“ä½œç¬¦
+- string& operator+=(const char c);                         //é‡è½½+=æ“ä½œç¬¦
+- string& operator+=(const string& str);                //é‡è½½+=æ“ä½œç¬¦
+- string& append(const char *s);                               //æŠŠå­—ç¬¦ä¸²sè¿æ¥åˆ°å½“å‰å­—ç¬¦ä¸²ç»“å°¾
+- string& append(const char *s, int n);                 //æŠŠå­—ç¬¦ä¸²sçš„å‰nä¸ªå­—ç¬¦è¿æ¥åˆ°å½“å‰å­—ç¬¦ä¸²ç»“å°¾
+- string& append(const string &s);                           //åŒoperator+=(const string& str)
+- string& append(const string &s, int pos, int n);//å­—ç¬¦ä¸²sä¸­ä»poså¼€å§‹çš„nä¸ªå­—ç¬¦è¿æ¥åˆ°å­—ç¬¦ä¸²ç»“å°¾
+*/
+
+
+void test01()
+{
+	string str1 = "æˆ‘";
+
+	str1 += "çˆ±ç©æ¸¸æˆ";
+
+	cout << "str1 = " << str1 << endl;
+
+	str1 += ':';
+
+	cout << "str1 = " << str1 << endl;
+
+	string str2 = "LOL DNF";
+
+	str1 += str2;
+	cout << "str1 = " << str1 << endl;
+
+
+	string str3 = "I";
+	str3.append(" love ");
+	cout << "str3 = " << str3 << endl;
+
+	str3.append("game abcde", 4);
+	// I love game
+	cout << "str3 = " << str3 << endl;
+
+	//str3.append(str2);
+
+	//str3.append(str2, 0, 3); //åªæˆªå–åˆ°LOL
+	str3.append(str2,4,3); // åªæˆªå– DNFï¼Œ å‚æ•°2 ä»å“ªä¸ªä½ç½®å¼€å§‹æˆªå–ï¼Œå‚æ•°3 æˆªå–å­—ç¬¦ä¸ªæ•°
+	// I love game LOL DNF
+	cout << "str3 = " << str3 << endl;
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
