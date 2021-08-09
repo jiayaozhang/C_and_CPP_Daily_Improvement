@@ -30,5 +30,5 @@ string管理char*所分配的内存，不用担心复制越界和取值越界等
 1. 查找： 查找指定字符串是否存在
 2. 替换： 在指定的位置替换字符串
 
-![image](https://user-images.githubusercontent.com/38579506/128688747-e0704ade-9923-403f-9464-9b59dbe154d1.png)
+![image](https://user-images.githubusercontent.com/38579506/128692185-96111252-7699-4dd8-8ed2-043b67015ba3.png)
 
