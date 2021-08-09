@@ -1,46 +1,46 @@
-//#include<iostream>
-//using namespace std;
-//#include<vector>
-//
-//void printVector(vector<int>&v)
-//{
-//	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//}
-//
-////vectorÈİÆ÷¹¹Ôì
-//void test01()
-//{
-//	vector<int>v1; //Ä¬ÈÏ¹¹Ôì ÎŞ²Î¹¹Ôì
-//
-//	for (int i = 0; i < 10; i++)
-//	{
-//		v1.push_back(i);
-//	}
-//
-//	printVector(v1);
-//
-//	//Í¨¹ıÇø¼ä·½Ê½½øĞĞ¹¹Ôì
-//	vector<int>v2(v1.begin(), v1.end());
-//	printVector(v2);
-//
-//	//n¸öelem·½Ê½¹¹Ôì
-//	vector<int>v3(10, 100);
-//	printVector(v3);
-//
-//	//¿½±´¹¹Ôì
-//	vector<int>v4(v3);
-//	printVector(v4);
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include<vector>
+
+void printVector(vector<int>&v)
+{
+	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+//vectorå®¹å™¨æ„é€ 
+void test01()
+{
+	vector<int>v1; //é»˜è®¤æ„é€  æ— å‚æ„é€ 
+
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+
+	printVector(v1);
+
+	//é€šè¿‡åŒºé—´æ–¹å¼è¿›è¡Œæ„é€ 
+	vector<int>v2(v1.begin(), v1.end());
+	printVector(v2);
+
+	//nä¸ªelemæ–¹å¼æ„é€ 
+	vector<int>v3(10, 100);
+	printVector(v3);
+
+	//æ‹·è´æ„é€ 
+	vector<int>v4(v3);
+	printVector(v4);
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
