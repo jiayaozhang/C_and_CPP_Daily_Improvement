@@ -3,7 +3,7 @@ using namespace std;
 #include <vector>
 #include <string>
 
-//vector�����д���Զ�����������
+//自定义数据类型
 class Person
 {
 public:
@@ -26,23 +26,23 @@ void test01()
 	Person p4("ddd", 40);
 	Person p5("eee", 50);
 
-	//����������������
+	//向容器中插入数据
 	v.push_back(p1);
 	v.push_back(p2);
 	v.push_back(p3);
 	v.push_back(p4);
 	v.push_back(p5);
 
-	//���������е�����
+	//通过迭代器访问容器中的数据
 	for (vector<Person>::iterator it = v.begin(); it != v.end(); it++)
 	{
-		//cout << "������ " << (*it).m_Name << " ���䣺" << (*it).m_Age << endl;
-		cout << "������ " << it->m_Name << " ���䣺" << it->m_Age << endl;
+		//cout << "姓名 " << (*it).m_Name << "年龄 " << (*it).m_Age << endl;
+		cout << "：：姓名" << it->m_Name << "年龄" << it->m_Age << endl;
 	}
 }
 
 
-//����Զ����������� ָ��
+//存放自定义数据类型 指针
 void test02()
 {
 	vector<Person*>v;
@@ -53,17 +53,17 @@ void test02()
 	Person p4("ddd", 40);
 	Person p5("eee", 50);
 
-	//����������������
+	//向容器中添加数据
 	v.push_back(&p1);
 	v.push_back(&p2);
 	v.push_back(&p3);
 	v.push_back(&p4);
 	v.push_back(&p5);
 
-	//��������
+	//遍历容器
 	for (vector<Person *>::iterator it = v.begin(); it != v.end(); it++)
 	{
-		cout << "::������ " << (*it)->m_Name << " ���䣺 " << (*it)->m_Age << endl;
+		cout << "姓名： " << (*it)->m_Name << "年龄：" << (*it)->m_Age << endl;
 	}
 	
 }
@@ -78,3 +78,5 @@ int main() {
 
 	return 0;
 }
+
+
