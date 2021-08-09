@@ -47,3 +47,11 @@ string管理char*所分配的内存，不用担心复制越界和取值越界等
 < 返回-1
 
 ![image](https://user-images.githubusercontent.com/38579506/128693665-fe9f7ab6-fe38-4018-8223-95c33c76a141.png)
+
+## 5. string字符存取
+
+string中单个字符存取方式有两种
+
+![image](https://user-images.githubusercontent.com/38579506/128694353-ae69d01e-8814-4f30-9d37-40828db37534.png)
+
+
