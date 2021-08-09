@@ -57,4 +57,22 @@ vector容器的迭代器是支持随机访问的迭代器
 
 ![image](https://user-images.githubusercontent.com/38579506/128726404-70f404b0-a61a-45c2-8956-25df4c775e4c.png)
 
+## vector互换容器
+
+功能描述： 实现两个容器内元素进行互换
+
+函数原型：swap(vec); // 将vec与本身的元素互换
+
+总结：swap可以使两个容器互换，可以达到实用的收缩内存效果
+
+## vector预留空间
+
+功能描述： 减少vector在动态扩展容量时的扩展次数
+
+函数原型：reserve(int len); //容器预留len个元素长度，预留位置不初始化，元素不可访问。
+
+总结：如果数据量较大，可以一开始利用reserve预留空间
+
+
+
 
