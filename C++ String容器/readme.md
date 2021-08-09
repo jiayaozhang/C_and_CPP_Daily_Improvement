@@ -54,4 +54,12 @@ string中单个字符存取方式有两种
 
 ![image](https://user-images.githubusercontent.com/38579506/128694353-ae69d01e-8814-4f30-9d37-40828db37534.png)
 
+## 6. string插入和删除
+
+功能描述：
+对string字符串进行插入和删除字符操作
+
+函数原型：
+![image](https://user-images.githubusercontent.com/38579506/128695357-b486a008-f5bb-4364-bfd8-73c321e3388a.png)
+
 
