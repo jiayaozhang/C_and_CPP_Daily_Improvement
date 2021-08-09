@@ -42,3 +42,8 @@ vector容器的迭代器是支持随机访问的迭代器
 
 ![image](https://user-images.githubusercontent.com/38579506/128701310-abda8009-2558-4ed2-8237-9e5f64c8445a.png)
 
+总结：
+1. 判断是否为空 --- empty
+2. 返回元素个数 --- size
+3. 返回容器容量 --- capacity
+4. 重新指定大小 --- resize
