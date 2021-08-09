@@ -1,77 +1,77 @@
-//#include<iostream>
-//using namespace std;
-//#include <vector>
-//
-////vector»›∆˜ª•ªª
-//
-//void printVector(vector<int>&v)
-//{
-//	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//}
-//
-////1°¢ª˘±æ π”√
-//void test01()
-//{
-//	vector<int>v1;
-//	for (int i = 0; i < 10; i++)
-//	{
-//		v1.push_back(i);
-//	}
-//
-//	cout << "Ωªªª«∞£∫ " << endl;
-//	printVector(v1);
-//
-//	vector<int>v2;
-//	for (int i = 10; i > 0; i--)
-//	{
-//		v2.push_back(i);
-//	}
-//	printVector(v2);
-//
-//
-//	cout << "Ωªªª∫Û£∫ " << endl;
-//	v1.swap(v2);
-//	printVector(v1);
-//	printVector(v2);
-//
-//}
-//
-////2°¢ µº ”√Õæ
-////«…”√swapø…“‘ ’Àıƒ⁄¥Êø’º‰
-//void test02()
-//{
-//	vector<int>v;
-//	for (int i = 0; i < 100000; i++)
-//	{
-//		v.push_back(i);
-//	}
-//
-//	cout << "vµƒ»›¡øŒ™£∫ " << v.capacity() << endl;
-//	cout << "vµƒ¥Û–°Œ™£∫ " << v.size() << endl;
-//
-//
-//	v.resize(3); //÷ÿ–¬÷∏∂®¥Û–°
-//	cout << "vµƒ»›¡øŒ™£∫ " << v.capacity() << endl;
-//	cout << "vµƒ¥Û–°Œ™£∫ " << v.size() << endl;
-//
-//	//«…”√swap ’Àıƒ⁄¥Ê
-//	vector<int>(v).swap(v); 
-//
-//	cout << "vµƒ»›¡øŒ™£∫ " << v.capacity() << endl;
-//	cout << "vµƒ¥Û–°Œ™£∫ " << v.size() << endl;
-//}
-//
-//int main() {
-//
-//	//test01();
-//
-//	test02();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <vector>
+
+//vectorÂÆπÂô®‰∫íÊç¢
+
+void printVector(vector<int>&v)
+{
+	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+//1„ÄÅÂü∫Êú¨‰ΩøÁî®
+void test01()
+{
+	vector<int>v1;
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+
+	cout << "‰∫§Êç¢ÂâçÔºö " << endl;
+	printVector(v1);
+
+	vector<int>v2;
+	for (int i = 10; i > 0; i--)
+	{
+		v2.push_back(i);
+	}
+	printVector(v2);
+
+
+	cout << "‰∫§Êç¢ÂêéÔºö " << endl;
+	v1.swap(v2);
+	printVector(v1);
+	printVector(v2);
+
+}
+
+//2„ÄÅÂÆûÈôÖÁî®ÈÄî
+//Â∑ßÁî®swapÂèØ‰ª•Êî∂Áº©ÂÜÖÂ≠òÁ©∫Èó¥
+void test02()
+{
+	vector<int>v;
+	for (int i = 0; i < 100000; i++)
+	{
+		v.push_back(i);
+	}
+
+	cout << "vÁöÑÂÆπÈáè‰∏∫Ôºö " << v.capacity() << endl;
+	cout << "vÁöÑÂ§ßÂ∞è‰∏∫Ôºö " << v.size() << endl;
+
+
+	v.resize(3); //ÈáçÊñ∞ÊåáÂÆöÂ§ßÂ∞è
+	cout << "vÁöÑÂÆπÈáè‰∏∫Ôºö " << v.capacity() << endl;
+	cout << "vÁöÑÂ§ßÂ∞è‰∏∫Ôºö " << v.size() << endl;
+
+	//Â∑ßÁî®swapÊî∂Áº©ÂÜÖÂ≠ò
+	vector<int>(v).swap(v); 
+
+	cout << "vÁöÑÂÆπÈáè‰∏∫Ôºö " << v.capacity() << endl;
+	cout << "vÁöÑÂ§ßÂ∞è‰∏∫Ôºö " << v.size() << endl;
+}
+
+int main() {
+
+	//test01();
+
+	test02();
+
+	system("pause");
+
+	return 0;
+}
