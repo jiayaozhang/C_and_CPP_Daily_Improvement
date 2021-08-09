@@ -18,3 +18,9 @@ string管理char*所分配的内存，不用担心复制越界和取值越界等
 
 ![image](https://user-images.githubusercontent.com/38579506/128685566-b00fc765-09ce-46b3-a99d-f5c4ce92196c.png)
 
+## 3. string赋值操作
+
+给string字符串进行赋值
+
+![image](https://user-images.githubusercontent.com/38579506/128688747-e0704ade-9923-403f-9464-9b59dbe154d1.png)
+
