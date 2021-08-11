@@ -1,40 +1,40 @@
-//#include<iostream>
-//using namespace std;
-//#include <stack>
-//
-////Õ»stackÈİÆ÷ 
-//
-//void test01()
-//{
-//	//ÌØµã£º·ûºÏÏÈ½øºó³öÊı¾İ½á¹¹
-//	stack<int>s;
-//
-//	//ÈëÕ»
-//	s.push(10);
-//	s.push(20);
-//	s.push(30);
-//	s.push(40);
-//
-//	cout << "Õ»µÄ´óĞ¡£º " << s.size() << endl;
-//
-//	//Ö»ÒªÕ»²»Îª¿Õ£¬²é¿´Õ»¶¥£¬²¢ÇÒÖ´ĞĞ³öÕ»²Ù×÷
-//	while (!s.empty())
-//	{
-//		//²é¿´Õ»¶¥ÔªËØ
-//		cout << "Õ»¶¥ÔªËØÎª£º " << s.top() << endl;
-//
-//		//³öÕ»
-//		s.pop();
-//	}
-//
-//	cout << "Õ»µÄ´óĞ¡£º " << s.size() << endl;
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <stack>
+
+//æ ˆstackå®¹å™¨ 
+
+void test01()
+{
+	//ç‰¹ç‚¹ï¼šç¬¦åˆå…ˆè¿›åå‡ºæ•°æ®ç»“æ„
+	stack<int>s;
+
+	//å…¥æ ˆ
+	s.push(10);
+	s.push(20);
+	s.push(30);
+	s.push(40);
+
+	cout << "æ ˆçš„å¤§å°ï¼š " << s.size() << endl;
+
+	//åªè¦æ ˆä¸ä¸ºç©ºï¼ŒæŸ¥çœ‹æ ˆé¡¶ï¼Œå¹¶ä¸”æ‰§è¡Œå‡ºæ ˆæ“ä½œ
+	while (!s.empty())
+	{
+		//æŸ¥çœ‹æ ˆé¡¶å…ƒç´ 
+		cout << "æ ˆé¡¶å…ƒç´ ä¸ºï¼š " << s.top() << endl;
+
+		//å‡ºæ ˆ
+		s.pop();
+	}
+
+	cout << "æ ˆçš„å¤§å°ï¼š " << s.size() << endl;
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
