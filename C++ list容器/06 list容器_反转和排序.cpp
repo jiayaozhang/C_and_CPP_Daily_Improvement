@@ -1,81 +1,81 @@
-//#include<iostream>
-//using namespace std;
-//#include <list>
-//#include <algorithm>
-//
-////listÈİÆ÷·´×ªºÍÅÅĞò
-//
-//void printList(const list<int>&L)
-//{
-//	for (list<int>::const_iterator it = L.begin(); it != L.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//}
-//
-//void test01()
-//{
-//	//·´×ª
-//	list<int>L1;
-//
-//	L1.push_back(20);
-//	L1.push_back(10);
-//	L1.push_back(50);
-//	L1.push_back(40);
-//	L1.push_back(30);
-//
-//	cout << "·´×ªÇ°£º " << endl;
-//	printList(L1);
-//
-//	//·´×ª
-//	L1.reverse();
-//	cout << "·´×ªºó£º " << endl;
-//	printList(L1);
-//}
-//
-//bool myCompare(int v1 ,int v2)
-//{
-//	//½µĞò  ¾ÍÈÃµÚÒ»¸öÊı > µÚ¶ş¸öÊı
-//	return v1 > v2;
-//}
-//
-////ÅÅĞò
-//void test02()
-//{
-//	list<int>L1;
-//
-//	L1.push_back(20);
-//	L1.push_back(10);
-//	L1.push_back(50);
-//	L1.push_back(40);
-//	L1.push_back(30);
-//	
-//	//ÅÅĞò
-//	cout << "ÅÅĞòÇ°£º " << endl;
-//	printList(L1);
-//
-//	//ËùÓĞ²»Ö§³ÖËæ»ú·ÃÎÊµü´úÆ÷µÄÈİÆ÷£¬²»¿ÉÒÔÓÃ±ê×¼Ëã·¨
-//	//²»Ö§³ÖËæ»ú·ÃÎÊµü´úÆ÷µÄÈİÆ÷£¬ÄÚ²¿»áÌá¹©¶ÔÓ¦Ò»Ğ©Ëã·¨
-//	//sort(L1.begin(), L1.end());
-//
-//	L1.sort(); //Ä¬ÈÏÅÅĞò¹æÔò ´ÓĞ¡µ½´ó  ÉıĞò
-//	cout << "ÅÅĞòºó£º " << endl;
-//	printList(L1);
-//
-//	L1.sort(myCompare);
-//	printList(L1);
-//
-//}
-//
-//
-//int main() {
-//
-//	//test01();
-//
-//	test02();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <list>
+#include <algorithm>
+
+//listå®¹å™¨åè½¬å’Œæ’åº
+
+void printList(const list<int>&L)
+{
+	for (list<int>::const_iterator it = L.begin(); it != L.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+void test01()
+{
+	//åè½¬
+	list<int>L1;
+
+	L1.push_back(20);
+	L1.push_back(10);
+	L1.push_back(50);
+	L1.push_back(40);
+	L1.push_back(30);
+
+	cout << "åè½¬å‰ï¼š " << endl;
+	printList(L1);
+
+	//åè½¬
+	L1.reverse();
+	cout << "åè½¬åï¼š " << endl;
+	printList(L1);
+}
+
+bool myCompare(int v1 ,int v2)
+{
+	//é™åº  å°±è®©ç¬¬ä¸€ä¸ªæ•° > ç¬¬äºŒä¸ªæ•°
+	return v1 > v2;
+}
+
+//æ’åº
+void test02()
+{
+	list<int>L1;
+
+	L1.push_back(20);
+	L1.push_back(10);
+	L1.push_back(50);
+	L1.push_back(40);
+	L1.push_back(30);
+	
+	//æ’åº
+	cout << "æ’åºå‰ï¼š " << endl;
+	printList(L1);
+
+	//æ‰€æœ‰ä¸æ”¯æŒéšæœºè®¿é—®è¿­ä»£å™¨çš„å®¹å™¨ï¼Œä¸å¯ä»¥ç”¨æ ‡å‡†ç®—æ³•
+	//ä¸æ”¯æŒéšæœºè®¿é—®è¿­ä»£å™¨çš„å®¹å™¨ï¼Œå†…éƒ¨ä¼šæä¾›å¯¹åº”ä¸€äº›ç®—æ³•
+	//sort(L1.begin(), L1.end());
+
+	L1.sort(); //é»˜è®¤æ’åºè§„åˆ™ ä»å°åˆ°å¤§  å‡åº
+	cout << "æ’åºåï¼š " << endl;
+	printList(L1);
+
+	L1.sort(myCompare);
+	printList(L1);
+
+}
+
+
+int main() {
+
+	//test01();
+
+	test02();
+
+	system("pause");
+
+	return 0;
+}
