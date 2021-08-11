@@ -1,105 +1,105 @@
-//#include<iostream>
-//using namespace std;
-//#include <deque>
-////dequeÈİÆ÷²åÈëºÍÉ¾³ı
-//
-//void printDeque( const deque<int>&d)
-//{
-//	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//}
-//
-////Á½¶Ë²Ù×÷
-//void test01()
-//{
-//	deque<int>d1;
-//
-//	//Î²²å
-//	d1.push_back(10);
-//	d1.push_back(20);
-//
-//	//Í·²å
-//	d1.push_front(100);
-//	d1.push_front(200);
-//
-//	//200 100 10 20
-//	printDeque(d1);
-//
-//	//Î²É¾
-//	d1.pop_back();
-//	//200 100 10
-//	printDeque(d1);
-//
-//	//Í·É¾
-//	d1.pop_front();
-//	// 100 10
-//	printDeque(d1);
-//
-//}
-//
-//void test02()
-//{
-//	deque<int>d1;
-//	d1.push_back(10);
-//	d1.push_back(20);
-//	d1.push_front(100);
-//	d1.push_front(200);
-//
-//	// 200 100 10 20
-//	printDeque(d1);
-//
-//	//insert²åÈë
-//	d1.insert(d1.begin(), 1000);
-//	// 1000 200 100 10 20
-//	printDeque(d1);
-//
-//	d1.insert(d1.begin(), 2, 10000);
-//	// 10000 10000 1000 200 100 10 20
-//	printDeque(d1);
-//
-//	//°´ÕÕÇø¼ä½øĞĞ²åÈë
-//	deque<int>d2;
-//	d2.push_back(1);
-//	d2.push_back(2);
-//	d2.push_back(3);
-//
-//	d1.insert(d1.begin(), d2.begin(), d2.end());
-//	// 1 2 3  10000 10000 1000 200 100 10 20
-//	printDeque(d1);
-//}
-//
-//void test03()
-//{
-//	deque<int>d1;
-//	d1.push_back(10);
-//	d1.push_back(20);
-//	d1.push_front(100);
-//	d1.push_front(200);
-//
-//	//É¾³ı
-//	deque<int>::iterator it = d1.begin();
-//	it++;
-//	d1.erase(it);
-//	// 200  10 20 
-//	printDeque(d1);
-//
-//	//°´Çø¼ä·½Ê½É¾³ı
-//	//d1.erase(d1.begin(), d1.end());
-//	//Çå¿Õ
-//	d1.clear();
-//	printDeque(d1);
-//}
-//
-//int main() {
-//
-//	//test01();
-//	//test02();
-//	test03();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <deque>
+//dequeå®¹å™¨æ’å…¥å’Œåˆ é™¤
+
+void printDeque( const deque<int>&d)
+{
+	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+//ä¸¤ç«¯æ“ä½œ
+void test01()
+{
+	deque<int>d1;
+
+	//å°¾æ’
+	d1.push_back(10);
+	d1.push_back(20);
+
+	//å¤´æ’
+	d1.push_front(100);
+	d1.push_front(200);
+
+	//200 100 10 20
+	printDeque(d1);
+
+	//å°¾åˆ 
+	d1.pop_back();
+	//200 100 10
+	printDeque(d1);
+
+	//å¤´åˆ 
+	d1.pop_front();
+	// 100 10
+	printDeque(d1);
+
+}
+
+void test02()
+{
+	deque<int>d1;
+	d1.push_back(10);
+	d1.push_back(20);
+	d1.push_front(100);
+	d1.push_front(200);
+
+	// 200 100 10 20
+	printDeque(d1);
+
+	//insertæ’å…¥
+	d1.insert(d1.begin(), 1000);
+	// 1000 200 100 10 20
+	printDeque(d1);
+
+	d1.insert(d1.begin(), 2, 10000);
+	// 10000 10000 1000 200 100 10 20
+	printDeque(d1);
+
+	//æŒ‰ç…§åŒºé—´è¿›è¡Œæ’å…¥
+	deque<int>d2;
+	d2.push_back(1);
+	d2.push_back(2);
+	d2.push_back(3);
+
+	d1.insert(d1.begin(), d2.begin(), d2.end());
+	// 1 2 3  10000 10000 1000 200 100 10 20
+	printDeque(d1);
+}
+
+void test03()
+{
+	deque<int>d1;
+	d1.push_back(10);
+	d1.push_back(20);
+	d1.push_front(100);
+	d1.push_front(200);
+
+	//åˆ é™¤
+	deque<int>::iterator it = d1.begin();
+	it++;
+	d1.erase(it);
+	// 200  10 20 
+	printDeque(d1);
+
+	//æŒ‰åŒºé—´æ–¹å¼åˆ é™¤
+	//d1.erase(d1.begin(), d1.end());
+	//æ¸…ç©º
+	d1.clear();
+	printDeque(d1);
+}
+
+int main() {
+
+	//test01();
+	//test02();
+	test03();
+
+	system("pause");
+
+	return 0;
+}
