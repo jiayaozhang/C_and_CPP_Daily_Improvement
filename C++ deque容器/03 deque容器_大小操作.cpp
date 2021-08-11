@@ -1,51 +1,51 @@
-//#include<iostream>
-//using namespace std;
-//#include <deque>
-//
-////dequeÈİÆ÷´óĞ¡²Ù×÷
-//void printDeuqe(const deque<int>&d)
-//{
-//	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//}
-//
-//void test01()
-//{
-//	deque<int>d1;
-//	for (int i = 0; i < 10; i++)
-//	{
-//		d1.push_back(i);
-//	}
-//	printDeuqe(d1);
-//
-//	if (d1.empty())
-//	{
-//		cout << "d1Îª¿Õ" << endl;
-//	}
-//	else
-//	{
-//		cout << "d1²»Îª¿Õ" << endl;
-//		cout << "d1µÄ´óĞ¡Îª£º " << d1.size() << endl;
-//		//dequeÈİÆ÷Ã»ÓĞÈİÁ¿¸ÅÄî
-//	}
-//
-//	//ÖØĞÂÖ¸¶¨´óĞ¡
-//	//d1.resize(15);
-//	d1.resize(15,1);
-//	printDeuqe(d1);
-//
-//	d1.resize(5);
-//	printDeuqe(d1);
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <deque>
+
+//dequeå®¹å™¨å¤§å°æ“ä½œ
+void printDeuqe(const deque<int>&d)
+{
+	for (deque<int>::const_iterator it = d.begin(); it != d.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+void test01()
+{
+	deque<int>d1;
+	for (int i = 0; i < 10; i++)
+	{
+		d1.push_back(i);
+	}
+	printDeuqe(d1);
+
+	if (d1.empty())
+	{
+		cout << "d1ä¸ºç©º" << endl;
+	}
+	else
+	{
+		cout << "d1ä¸ä¸ºç©º" << endl;
+		cout << "d1çš„å¤§å°ä¸ºï¼š " << d1.size() << endl;
+		//dequeå®¹å™¨æ²¡æœ‰å®¹é‡æ¦‚å¿µ
+	}
+
+	//é‡æ–°æŒ‡å®šå¤§å°
+	//d1.resize(15);
+	d1.resize(15,1);
+	printDeuqe(d1);
+
+	d1.resize(5);
+	printDeuqe(d1);
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
