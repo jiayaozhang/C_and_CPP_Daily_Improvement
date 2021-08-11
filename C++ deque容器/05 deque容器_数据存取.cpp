@@ -1,42 +1,42 @@
-//#include<iostream>
-//using namespace std;
-//#include <deque>
-//
-////dequeÈİÆ÷Êı¾İ´æÈ¡
-//void test01()
-//{
-//	deque<int>d;
-//	d.push_back(10);
-//	d.push_back(20);
-//	d.push_back(30);
-//	d.push_front(100);
-//	d.push_front(200);
-//	d.push_front(300);
-//
-//	//Í¨¹ı[]·½Ê½·ÃÎÊÔªËØ
-//	// 300 200 100 10 20 30 
-//	for (int i = 0; i < d.size(); i++)
-//	{
-//		cout << d[i] << " ";
-//	}
-//	cout << endl;
-//	//Í¨¹ıat·½Ê½·ÃÎÊÔªËØ
-//	for (int i = 0; i < d.size(); i++)
-//	{
-//		cout << d.at(i) << " ";
-//	}
-//	cout << endl;
-//
-//	cout << "µÚÒ»¸öÔªËØÎª£º " << d.front() << endl;
-//	cout << "×îºóÒ»¸öÔªËØ£º " << d.back()  << endl;
-//
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <deque>
+
+//dequeå®¹å™¨æ•°æ®å­˜å–
+void test01()
+{
+	deque<int>d;
+	d.push_back(10);
+	d.push_back(20);
+	d.push_back(30);
+	d.push_front(100);
+	d.push_front(200);
+	d.push_front(300);
+
+	//é€šè¿‡[]æ–¹å¼è®¿é—®å…ƒç´ 
+	// 300 200 100 10 20 30 
+	for (int i = 0; i < d.size(); i++)
+	{
+		cout << d[i] << " ";
+	}
+	cout << endl;
+	//é€šè¿‡atæ–¹å¼è®¿é—®å…ƒç´ 
+	for (int i = 0; i < d.size(); i++)
+	{
+		cout << d.at(i) << " ";
+	}
+	cout << endl;
+
+	cout << "ç¬¬ä¸€ä¸ªå…ƒç´ ä¸ºï¼š " << d.front() << endl;
+	cout << "æœ€åä¸€ä¸ªå…ƒç´ ï¼š " << d.back()  << endl;
+
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
