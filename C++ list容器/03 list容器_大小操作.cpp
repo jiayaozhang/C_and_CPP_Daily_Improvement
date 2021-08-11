@@ -1,53 +1,53 @@
-//#include<iostream>
-//using namespace std;
-//#include <list>
-//
-////listÈİÆ÷´óĞ¡²Ù×÷
-//
-//void printList(const list<int>&L)
-//{
-//	for (list<int>::const_iterator it = L.begin(); it != L.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//}
-//
-//void test01()
-//{
-//	list<int>L1;
-//	L1.push_back(10);
-//	L1.push_back(20);
-//	L1.push_back(30);
-//	L1.push_back(40);
-//
-//	printList(L1);
-//
-//	//ÅĞ¶ÏÈİÆ÷ÊÇ·ñÎª¿Õ
-//	if (L1.empty())
-//	{
-//		cout << "L1Îª¿Õ" << endl;
-//	}
-//	else
-//	{
-//		cout << "L1²»Îª¿Õ" << endl;
-//		cout << "L1µÄÔªËØ¸öÊıÎª£º " << L1.size() << endl;
-//	}
-//
-//	//ÖØĞÂÖ¸¶¨´óĞ¡
-//	L1.resize(10, 10000);
-//	printList(L1);
-//
-//	L1.resize(2);
-//	printList(L1);
-//
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <list>
+
+//listå®¹å™¨å¤§å°æ“ä½œ
+
+void printList(const list<int>&L)
+{
+	for (list<int>::const_iterator it = L.begin(); it != L.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+void test01()
+{
+	list<int>L1;
+	L1.push_back(10);
+	L1.push_back(20);
+	L1.push_back(30);
+	L1.push_back(40);
+
+	printList(L1);
+
+	//åˆ¤æ–­å®¹å™¨æ˜¯å¦ä¸ºç©º
+	if (L1.empty())
+	{
+		cout << "L1ä¸ºç©º" << endl;
+	}
+	else
+	{
+		cout << "L1ä¸ä¸ºç©º" << endl;
+		cout << "L1çš„å…ƒç´ ä¸ªæ•°ä¸ºï¼š " << L1.size() << endl;
+	}
+
+	//é‡æ–°æŒ‡å®šå¤§å°
+	L1.resize(10, 10000);
+	printList(L1);
+
+	L1.resize(2);
+	printList(L1);
+
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
