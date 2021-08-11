@@ -1,91 +1,91 @@
-//#include<iostream>
-//using namespace std;
-//#include <list>
-//
-////listÈİÆ÷²åÈëºÍÉ¾³ı
-//
-///*
-//- push_back(elem);//ÔÚÈİÆ÷Î²²¿¼ÓÈëÒ»¸öÔªËØ
-//- pop_back();//É¾³ıÈİÆ÷ÖĞ×îºóÒ»¸öÔªËØ
-//- push_front(elem);//ÔÚÈİÆ÷¿ªÍ·²åÈëÒ»¸öÔªËØ
-//- pop_front();//´ÓÈİÆ÷¿ªÍ·ÒÆ³ıµÚÒ»¸öÔªËØ
-//- insert(pos,elem);//ÔÚposÎ»ÖÃ²åelemÔªËØµÄ¿½±´£¬·µ»ØĞÂÊı¾İµÄÎ»ÖÃ¡£
-//- insert(pos,n,elem);//ÔÚposÎ»ÖÃ²åÈën¸öelemÊı¾İ£¬ÎŞ·µ»ØÖµ¡£
-//- insert(pos,beg,end);//ÔÚposÎ»ÖÃ²åÈë[beg,end)Çø¼äµÄÊı¾İ£¬ÎŞ·µ»ØÖµ¡£
-//- clear();//ÒÆ³ıÈİÆ÷µÄËùÓĞÊı¾İ
-//- erase(beg,end);//É¾³ı[beg,end)Çø¼äµÄÊı¾İ£¬·µ»ØÏÂÒ»¸öÊı¾İµÄÎ»ÖÃ¡£
-//- erase(pos);//É¾³ıposÎ»ÖÃµÄÊı¾İ£¬·µ»ØÏÂÒ»¸öÊı¾İµÄÎ»ÖÃ¡£
-//- remove(elem);//É¾³ıÈİÆ÷ÖĞËùÓĞÓëelemÖµÆ¥ÅäµÄÔªËØ¡£
-//*/
-//
-//void printList( const list<int>&L)
-//{
-//	for (list<int>::const_iterator it = L.begin(); it != L.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//}
-//
-//void test01()
-//{
-//	list<int>L;
-//
-//	//Î²²å
-//	L.push_back(10);
-//	L.push_back(20);
-//	L.push_back(30);
-//
-//	//Í·²å
-//	L.push_front(100);
-//	L.push_front(200);
-//	L.push_front(300);
-//
-//	// 300 200 100 10 20 30 
-//	printList(L);
-//
-//	//Î²É¾
-//	L.pop_back();
-//	// 300 200 100 10 20 
-//	printList(L);
-//
-//	//Í·É¾
-//	L.pop_front();
-//	// 200 100 10 20 
-//	printList(L);
-//
-//	//insert²åÈë
-//	list<int>::iterator it = L.begin();
-//	L.insert(++it, 1000);
-//	//  200 1000 100 10 20 
-//	printList(L);
-//
-//	//É¾³ı
-//	it = L.begin();
-//	L.erase(++it);
-//	// 200 100 10 20 
-//	printList(L);
-//
-//	//ÒÆ³ı
-//	L.push_back(10000);
-//	L.push_back(10000);
-//	L.push_back(10000);
-//	L.push_back(10000);
-//	printList(L);
-//
-//	L.remove(10000);
-//	printList(L);
-//
-//	//Çå¿Õ
-//	L.clear();
-//	printList(L);
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <list>
+
+//listå®¹å™¨æ’å…¥å’Œåˆ é™¤
+
+/*
+- push_back(elem);//åœ¨å®¹å™¨å°¾éƒ¨åŠ å…¥ä¸€ä¸ªå…ƒç´ 
+- pop_back();//åˆ é™¤å®¹å™¨ä¸­æœ€åä¸€ä¸ªå…ƒç´ 
+- push_front(elem);//åœ¨å®¹å™¨å¼€å¤´æ’å…¥ä¸€ä¸ªå…ƒç´ 
+- pop_front();//ä»å®¹å™¨å¼€å¤´ç§»é™¤ç¬¬ä¸€ä¸ªå…ƒç´ 
+- insert(pos,elem);//åœ¨posä½ç½®æ’elemå…ƒç´ çš„æ‹·è´ï¼Œè¿”å›æ–°æ•°æ®çš„ä½ç½®ã€‚
+- insert(pos,n,elem);//åœ¨posä½ç½®æ’å…¥nä¸ªelemæ•°æ®ï¼Œæ— è¿”å›å€¼ã€‚
+- insert(pos,beg,end);//åœ¨posä½ç½®æ’å…¥[beg,end)åŒºé—´çš„æ•°æ®ï¼Œæ— è¿”å›å€¼ã€‚
+- clear();//ç§»é™¤å®¹å™¨çš„æ‰€æœ‰æ•°æ®
+- erase(beg,end);//åˆ é™¤[beg,end)åŒºé—´çš„æ•°æ®ï¼Œè¿”å›ä¸‹ä¸€ä¸ªæ•°æ®çš„ä½ç½®ã€‚
+- erase(pos);//åˆ é™¤posä½ç½®çš„æ•°æ®ï¼Œè¿”å›ä¸‹ä¸€ä¸ªæ•°æ®çš„ä½ç½®ã€‚
+- remove(elem);//åˆ é™¤å®¹å™¨ä¸­æ‰€æœ‰ä¸elemå€¼åŒ¹é…çš„å…ƒç´ ã€‚
+*/
+
+void printList( const list<int>&L)
+{
+	for (list<int>::const_iterator it = L.begin(); it != L.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+void test01()
+{
+	list<int>L;
+
+	//å°¾æ’
+	L.push_back(10);
+	L.push_back(20);
+	L.push_back(30);
+
+	//å¤´æ’
+	L.push_front(100);
+	L.push_front(200);
+	L.push_front(300);
+
+	// 300 200 100 10 20 30 
+	printList(L);
+
+	//å°¾åˆ 
+	L.pop_back();
+	// 300 200 100 10 20 
+	printList(L);
+
+	//å¤´åˆ 
+	L.pop_front();
+	// 200 100 10 20 
+	printList(L);
+
+	//insertæ’å…¥
+	list<int>::iterator it = L.begin();
+	L.insert(++it, 1000);
+	//  200 1000 100 10 20 
+	printList(L);
+
+	//åˆ é™¤
+	it = L.begin();
+	L.erase(++it);
+	// 200 100 10 20 
+	printList(L);
+
+	//ç§»é™¤
+	L.push_back(10000);
+	L.push_back(10000);
+	L.push_back(10000);
+	L.push_back(10000);
+	printList(L);
+
+	L.remove(10000);
+	printList(L);
+
+	//æ¸…ç©º
+	L.clear();
+	printList(L);
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
