@@ -1,25 +1,25 @@
-//#include<iostream>
-//using namespace std;
-//#include <string>
-////pair¶Ô×éµÄ´´½¨
-//void test01()
-//{
-//	//µÚÒ»ÖÖ·½Ê½
-//	pair<string, int>p("Tom", 20);
-//	cout << "ĞÕÃû£º " << p.first << " ÄêÁä£º " << p.second << endl;
-//
-//
-//	//µÚ¶şÖÖ·½Ê½
-//	pair<string, int>p2 = make_pair("Jerry", 30);
-//	cout << "ĞÕÃû£º " << p2.first << " ÄêÁä£º " << p2.second << endl;
-//}
-//
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <string>
+//pairå¯¹ç»„çš„åˆ›å»º
+void test01()
+{
+	//ç¬¬ä¸€ç§æ–¹å¼
+	pair<string, int>p("Tom", 20);
+	cout << "å§“åï¼š " << p.first << " å¹´é¾„ï¼š " << p.second << endl;
+
+
+	//ç¬¬äºŒç§æ–¹å¼
+	pair<string, int>p2 = make_pair("Jerry", 30);
+	cout << "å§“åï¼š " << p2.first << " å¹´é¾„ï¼š " << p2.second << endl;
+}
+
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
