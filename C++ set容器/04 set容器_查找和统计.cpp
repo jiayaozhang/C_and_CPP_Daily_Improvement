@@ -1,59 +1,59 @@
-//#include<iostream>
-//using namespace std;
-//#include <set>
-//
-////setÈİÆ÷ ²éÕÒºÍÍ³¼Æ
-//
-//void test01()
-//{
-//	//²éÕÒ
-//	set<int>s1;
-//
-//	//²åÈëÊı¾İ
-//	s1.insert(10);
-//	s1.insert(30);
-//	s1.insert(20);
-//	s1.insert(40);
-//
-//	set<int>::iterator pos = s1.find(30);
-//
-//	if (pos != s1.end())
-//	{
-//		cout << "ÕÒµ½ÔªËØ£º" << *pos << endl;
-//	}
-//	else
-//	{
-//		cout << "Î´ÕÒµ½ÔªËØ" << endl;
-//	}
-//
-//}
-//
-////Í³¼Æ
-//void test02()
-//{
-//	//²éÕÒ
-//	set<int>s1;
-//
-//	//²åÈëÊı¾İ
-//	s1.insert(10);
-//	s1.insert(30);
-//	s1.insert(20);
-//	s1.insert(40);
-//
-//
-//	//Í³¼Æ30µÄ¸öÊı  
-//	int num = s1.count(30); 
-//	//¶ÔÓÚset¶øÑÔ Í³¼Æ½á¹û ÒªÃ´ÊÇ0  ÒªÃ´ÊÇ1
-//	cout << "num = " << num << endl;
-//}
-//
-//int main() {
-//
-//	//test01();
-//
-//	test02();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <set>
+
+//setå®¹å™¨ æŸ¥æ‰¾å’Œç»Ÿè®¡
+
+void test01()
+{
+	//æŸ¥æ‰¾
+	set<int>s1;
+
+	//æ’å…¥æ•°æ®
+	s1.insert(10);
+	s1.insert(30);
+	s1.insert(20);
+	s1.insert(40);
+
+	set<int>::iterator pos = s1.find(30);
+
+	if (pos != s1.end())
+	{
+		cout << "æ‰¾åˆ°å…ƒç´ ï¼š" << *pos << endl;
+	}
+	else
+	{
+		cout << "æœªæ‰¾åˆ°å…ƒç´ " << endl;
+	}
+
+}
+
+//ç»Ÿè®¡
+void test02()
+{
+	//æŸ¥æ‰¾
+	set<int>s1;
+
+	//æ’å…¥æ•°æ®
+	s1.insert(10);
+	s1.insert(30);
+	s1.insert(20);
+	s1.insert(40);
+
+
+	//ç»Ÿè®¡30çš„ä¸ªæ•°  
+	int num = s1.count(30); 
+	//å¯¹äºsetè€Œè¨€ ç»Ÿè®¡ç»“æœ è¦ä¹ˆæ˜¯0  è¦ä¹ˆæ˜¯1
+	cout << "num = " << num << endl;
+}
+
+int main() {
+
+	//test01();
+
+	test02();
+
+	system("pause");
+
+	return 0;
+}
