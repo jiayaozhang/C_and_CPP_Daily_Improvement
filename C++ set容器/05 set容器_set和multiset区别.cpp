@@ -1,55 +1,55 @@
-//#include<iostream>
-//using namespace std;
-//#include <set>
-//
-////setÈİÆ÷  ºÍ multisetÈİÆ÷µÄÇø±ğ
-//void test01()
-//{
-//	set<int>s;
-//	
-//	pair<set<int>::iterator ,bool> ret = s.insert(10);
-//
-//	if (ret.second)
-//	{
-//		cout << "µÚÒ»´Î²åÈë³É¹¦" << endl;
-//	}
-//	else
-//	{
-//		cout << "µÚÒ»´Î²åÈëÊ§°Ü" << endl;
-//	}
-//	
-//
-//	ret = s.insert(10);
-//
-//	if (ret.second)
-//	{
-//		cout << "µÚ¶ş´Î²åÈë³É¹¦" << endl;
-//	}
-//	else
-//	{
-//		cout << "µÚ¶ş´Î²åÈëÊ§°Ü" << endl;
-//	}
-//
-//
-//	multiset<int>ms;
-//	//ÔÊĞí²åÈëÖØ¸´Öµ
-//	ms.insert(10);
-//	ms.insert(10);
-//	ms.insert(10);
-//	ms.insert(10);
-//
-//	for (multiset<int>::iterator it = ms.begin(); it != ms.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <set>
+
+//setå®¹å™¨  å’Œ multisetå®¹å™¨çš„åŒºåˆ«
+void test01()
+{
+	set<int>s;
+	
+	pair<set<int>::iterator ,bool> ret = s.insert(10);
+
+	if (ret.second)
+	{
+		cout << "ç¬¬ä¸€æ¬¡æ’å…¥æˆåŠŸ" << endl;
+	}
+	else
+	{
+		cout << "ç¬¬ä¸€æ¬¡æ’å…¥å¤±è´¥" << endl;
+	}
+	
+
+	ret = s.insert(10);
+
+	if (ret.second)
+	{
+		cout << "ç¬¬äºŒæ¬¡æ’å…¥æˆåŠŸ" << endl;
+	}
+	else
+	{
+		cout << "ç¬¬äºŒæ¬¡æ’å…¥å¤±è´¥" << endl;
+	}
+
+
+	multiset<int>ms;
+	//å…è®¸æ’å…¥é‡å¤å€¼
+	ms.insert(10);
+	ms.insert(10);
+	ms.insert(10);
+	ms.insert(10);
+
+	for (multiset<int>::iterator it = ms.begin(); it != ms.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
