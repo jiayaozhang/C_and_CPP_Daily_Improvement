@@ -1,40 +1,40 @@
-//#include<iostream>
-//using namespace std;
-//#include <map>
-//
-////mapÈİÆ÷ ²éÕÒºÍÍ³¼Æ
-//void test01()
-//{
-//	//²éÕÒ
-//	map<int, int>m;
-//	m.insert(pair<int, int>(1, 10));
-//	m.insert(pair<int, int>(2, 20));
-//	m.insert(pair<int, int>(3, 30));
-//	m.insert(pair<int, int>(3, 40));
-//
-//	map<int,int>::iterator pos = m.find(3);
-//
-//	if (pos != m.end())
-//	{
-//		cout << "²éµ½ÁËÔªËØ key = " << (*pos).first << " value = " << pos->second << endl;
-//	}
-//	else
-//	{
-//		cout << "Î´ÕÒµ½ÔªËØ" << endl;
-//	}
-//
-//	//Í³¼Æ
-//	//map²»ÔÊĞí²åÈëÖØ¸´key ÔªËØ £¬countÍ³¼Æ¶øÑÔ ½á¹ûÒªÃ´ÊÇ0 ÒªÃ´ÊÇ1
-//	//multimapµÄcountÍ³¼Æ¿ÉÄÜ´óÓÚ1
-//	int num = m.count(3);
-//	cout << "num = " << num << endl;
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <map>
+
+//mapå®¹å™¨ æŸ¥æ‰¾å’Œç»Ÿè®¡
+void test01()
+{
+	//æŸ¥æ‰¾
+	map<int, int>m;
+	m.insert(pair<int, int>(1, 10));
+	m.insert(pair<int, int>(2, 20));
+	m.insert(pair<int, int>(3, 30));
+	m.insert(pair<int, int>(3, 40));
+
+	map<int,int>::iterator pos = m.find(3);
+
+	if (pos != m.end())
+	{
+		cout << "æŸ¥åˆ°äº†å…ƒç´  key = " << (*pos).first << " value = " << pos->second << endl;
+	}
+	else
+	{
+		cout << "æœªæ‰¾åˆ°å…ƒç´ " << endl;
+	}
+
+	//ç»Ÿè®¡
+	//mapä¸å…è®¸æ’å…¥é‡å¤key å…ƒç´  ï¼Œcountç»Ÿè®¡è€Œè¨€ ç»“æœè¦ä¹ˆæ˜¯0 è¦ä¹ˆæ˜¯1
+	//multimapçš„countç»Ÿè®¡å¯èƒ½å¤§äº1
+	int num = m.count(3);
+	cout << "num = " << num << endl;
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
