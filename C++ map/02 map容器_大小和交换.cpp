@@ -1,65 +1,65 @@
-//#include<iostream>
-//using namespace std;
-//#include <map>
-////mapÈİÆ÷ ´óĞ¡ºÍ½»»»
-//
-////´óĞ¡
-//void test01()
-//{
-//	map<int, int>m;
-//	m.insert(pair<int, int>(1, 10));
-//	m.insert(pair<int, int>(2, 20));
-//	m.insert(pair<int, int>(3, 30));
-//
-//	if (m.empty())
-//	{
-//		cout << "mÎª¿Õ" << endl;
-//	}
-//	else
-//	{
-//		cout << "m²»Îª¿Õ" << endl;
-//		cout << "mµÄ´óĞ¡Îª£º " << m.size() << endl;
-//	}
-//}
-//
-//void printMap(map<int, int>&m)
-//{
-//	for (map<int, int>::iterator it = m.begin(); it != m.end(); it++)
-//	{
-//		cout << "key = " << it->first << " value = " << it->second << endl;
-//	}
-//	cout << endl;
-//}
-//
-////½»»»
-//void test02()
-//{
-//	map<int, int>m;
-//	m.insert(pair<int, int>(1, 10));
-//	m.insert(pair<int, int>(2, 20));
-//	m.insert(pair<int, int>(3, 30));
-//
-//	map<int, int>m2;
-//	m2.insert(pair<int, int>(4, 100));
-//	m2.insert(pair<int, int>(5, 200));
-//	m2.insert(pair<int, int>(6, 300));
-//
-//	cout << "½»»»Ç°£º " << endl;
-//	printMap(m);
-//	printMap(m2);
-//
-//	m.swap(m2);
-//	cout << "½»»»ºó£º " << endl;
-//	printMap(m);
-//	printMap(m2);
-//
-//}
-//
-//int main() {
-//
-//	//test01();
-//	test02();
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <map>
+//mapå®¹å™¨ å¤§å°å’Œäº¤æ¢
+
+//å¤§å°
+void test01()
+{
+	map<int, int>m;
+	m.insert(pair<int, int>(1, 10));
+	m.insert(pair<int, int>(2, 20));
+	m.insert(pair<int, int>(3, 30));
+
+	if (m.empty())
+	{
+		cout << "mä¸ºç©º" << endl;
+	}
+	else
+	{
+		cout << "mä¸ä¸ºç©º" << endl;
+		cout << "mçš„å¤§å°ä¸ºï¼š " << m.size() << endl;
+	}
+}
+
+void printMap(map<int, int>&m)
+{
+	for (map<int, int>::iterator it = m.begin(); it != m.end(); it++)
+	{
+		cout << "key = " << it->first << " value = " << it->second << endl;
+	}
+	cout << endl;
+}
+
+//äº¤æ¢
+void test02()
+{
+	map<int, int>m;
+	m.insert(pair<int, int>(1, 10));
+	m.insert(pair<int, int>(2, 20));
+	m.insert(pair<int, int>(3, 30));
+
+	map<int, int>m2;
+	m2.insert(pair<int, int>(4, 100));
+	m2.insert(pair<int, int>(5, 200));
+	m2.insert(pair<int, int>(6, 300));
+
+	cout << "äº¤æ¢å‰ï¼š " << endl;
+	printMap(m);
+	printMap(m2);
+
+	m.swap(m2);
+	cout << "äº¤æ¢åï¼š " << endl;
+	printMap(m);
+	printMap(m2);
+
+}
+
+int main() {
+
+	//test01();
+	test02();
+	system("pause");
+
+	return 0;
+}
