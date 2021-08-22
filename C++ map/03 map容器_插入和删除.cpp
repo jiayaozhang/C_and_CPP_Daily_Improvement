@@ -1,59 +1,59 @@
-//#include<iostream>
-//using namespace std;
-//#include <map>
-//
-////mapÈİÆ÷ ²åÈëºÍÉ¾³ı
-//
-//void printMap(map<int, int>&m)
-//{
-//	for (map<int, int>::iterator it = m.begin(); it != m.end(); it++)
-//	{
-//		cout << "key = " << it->first << " value = " << it->second << endl;
-//	}
-//	cout << endl;
-//}
-//
-//void test01()
-//{
-//	map<int, int>m;
-//
-//	//²åÈë
-//	//µÚÒ»ÖÖ
-//	m.insert(pair<int, int>(1, 10));
-//
-//	//µÚ¶şÖÖ
-//	m.insert(make_pair(2, 20));
-//
-//	//µÚÈıÖÖ
-//	m.insert(map<int, int>::value_type(3, 30));
-//
-//	//µÚËÄÖÖ
-//	m[4] = 40;
-//
-//	//[]²»½¨Òé²åÈë£¬ÓÃÍ¾ ¿ÉÒÔÀûÓÃkey·ÃÎÊµ½value
-//	//cout << m[4] << endl;
-//	printMap(m);
-//
-//
-//	//É¾³ı
-//	m.erase(m.begin());
-//	printMap(m);
-//
-//
-//	m.erase(3); //°´ÕÕkeyÉ¾³ı
-//	printMap(m);
-//
-//	//Çå¿Õ
-//	//m.erase(m.begin(), m.end());
-//	m.clear();
-//	printMap(m);
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <map>
+
+//mapå®¹å™¨ æ’å…¥å’Œåˆ é™¤
+
+void printMap(map<int, int>&m)
+{
+	for (map<int, int>::iterator it = m.begin(); it != m.end(); it++)
+	{
+		cout << "key = " << it->first << " value = " << it->second << endl;
+	}
+	cout << endl;
+}
+
+void test01()
+{
+	map<int, int>m;
+
+	//æ’å…¥
+	//ç¬¬ä¸€ç§
+	m.insert(pair<int, int>(1, 10));
+
+	//ç¬¬äºŒç§
+	m.insert(make_pair(2, 20));
+
+	//ç¬¬ä¸‰ç§
+	m.insert(map<int, int>::value_type(3, 30));
+
+	//ç¬¬å››ç§
+	m[4] = 40;
+
+	//[]ä¸å»ºè®®æ’å…¥ï¼Œç”¨é€” å¯ä»¥åˆ©ç”¨keyè®¿é—®åˆ°value
+	//cout << m[4] << endl;
+	printMap(m);
+
+
+	//åˆ é™¤
+	m.erase(m.begin());
+	printMap(m);
+
+
+	m.erase(3); //æŒ‰ç…§keyåˆ é™¤
+	printMap(m);
+
+	//æ¸…ç©º
+	//m.erase(m.begin(), m.end());
+	m.clear();
+	printMap(m);
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
