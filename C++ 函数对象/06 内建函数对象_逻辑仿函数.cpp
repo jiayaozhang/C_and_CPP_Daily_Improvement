@@ -1,46 +1,46 @@
-//#include<iostream>
-//using namespace std;
-//#include <vector>
-//#include <algorithm>
-//#include <functional>
-//
-////ÄÚ½¨º¯Êı¶ÔÏó_Âß¼­·Âº¯Êı
-////Âß¼­·Ç  logical_not
-//
-//void test01()
-//{
-//	vector<bool>v;
-//	v.push_back(true);
-//	v.push_back(false);
-//	v.push_back(true);
-//	v.push_back(false);
-//
-//	for (vector<bool>::iterator it = v.begin(); it != v.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//
-//	//ÀûÓÃÂß¼­·Ç  ½«ÈİÆ÷v °áÔËµ½ ÈİÆ÷v2ÖĞ,²¢Ö´ĞĞÈ¡·´²Ù×÷
-//	vector<bool>v2;
-//	v2.resize(v.size());
-//
-//	transform(v.begin(), v.end(), v2.begin(), logical_not<bool>());
-//
-//	for (vector<bool>::iterator it = v2.begin(); it != v2.end(); it++)
-//	{
-//		cout << *it << " ";
-//	}
-//	cout << endl;
-//
-//}
-//
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <vector>
+#include <algorithm>
+#include <functional>
+
+//å†…å»ºå‡½æ•°å¯¹è±¡_é€»è¾‘ä»¿å‡½æ•°
+//é€»è¾‘é  logical_not
+
+void test01()
+{
+	vector<bool>v;
+	v.push_back(true);
+	v.push_back(false);
+	v.push_back(true);
+	v.push_back(false);
+
+	for (vector<bool>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+
+	//åˆ©ç”¨é€»è¾‘é  å°†å®¹å™¨v æ¬è¿åˆ° å®¹å™¨v2ä¸­,å¹¶æ‰§è¡Œå–åæ“ä½œ
+	vector<bool>v2;
+	v2.resize(v.size());
+
+	transform(v.begin(), v.end(), v2.begin(), logical_not<bool>());
+
+	for (vector<bool>::iterator it = v2.begin(); it != v2.end(); it++)
+	{
+		cout << *it << " ";
+	}
+	cout << endl;
+
+}
+
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
