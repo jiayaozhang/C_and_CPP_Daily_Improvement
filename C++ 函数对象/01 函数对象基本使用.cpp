@@ -1,81 +1,81 @@
-//#include<iostream>
-//using namespace std;
-//#include <string>
-//
-////º¯Êı¶ÔÏó £¨·Âº¯Êı£©
-///*
-//- º¯Êı¶ÔÏóÔÚÊ¹ÓÃÊ±£¬¿ÉÒÔÏñÆÕÍ¨º¯ÊıÄÇÑùµ÷ÓÃ, ¿ÉÒÔÓĞ²ÎÊı£¬¿ÉÒÔÓĞ·µ»ØÖµ
-//- º¯Êı¶ÔÏó³¬³öÆÕÍ¨º¯ÊıµÄ¸ÅÄî£¬º¯Êı¶ÔÏó¿ÉÒÔÓĞ×Ô¼ºµÄ×´Ì¬
-//- º¯Êı¶ÔÏó¿ÉÒÔ×÷Îª²ÎÊı´«µİ
-//*/
-//
-//class MyAdd
-//{
-//public:
-//	int operator()(int v1,int v2)
-//	{
-//		return v1 + v2;
-//	}
-//
-//};
-//
-//// 1¡¢º¯Êı¶ÔÏóÔÚÊ¹ÓÃÊ±£¬¿ÉÒÔÏñÆÕÍ¨º¯ÊıÄÇÑùµ÷ÓÃ, ¿ÉÒÔÓĞ²ÎÊı£¬¿ÉÒÔÓĞ·µ»ØÖµ
-//void test01()
-//{
-//	MyAdd myAdd;
-//	cout <<  myAdd(10, 10) <<endl;
-//}
-//
-//
-////2¡¢º¯Êı¶ÔÏó³¬³öÆÕÍ¨º¯ÊıµÄ¸ÅÄî£¬º¯Êı¶ÔÏó¿ÉÒÔÓĞ×Ô¼ºµÄ×´Ì¬
-//class MyPrint
-//{
-//public:
-//	MyPrint()
-//	{
-//		this->count = 0;
-//	}
-//	void operator()(string test)
-//	{
-//		cout << test << endl;
-//		this->count++;
-//	}
-//
-//	int count; // ÄÚ²¿×Ô¼º×´Ì¬
-//};
-//
-//void test02()
-//{
-//	MyPrint myPrint;
-//	myPrint("hello world");
-//	myPrint("hello world");
-//	myPrint("hello world");
-//	myPrint("hello world");
-//
-//	cout << "myPrintµ÷ÓÃ´ÎÊıÎª£º " << myPrint.count << endl;
-//}
-//
-////3¡¢º¯Êı¶ÔÏó¿ÉÒÔ×÷Îª²ÎÊı´«µİ
-//void doPrint(MyPrint & mp, string test)
-//{
-//	mp(test);
-//}
-//
-//void test03()
-//{
-//	MyPrint myPrint;
-//	doPrint(myPrint, "Hello c++");
-//}
-//
-//int main() {
-//
-//	//test01();
-//
-//	//test02();
-//
-//	test03();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <string>
+
+//å‡½æ•°å¯¹è±¡ ï¼ˆä»¿å‡½æ•°ï¼‰
+/*
+- å‡½æ•°å¯¹è±¡åœ¨ä½¿ç”¨æ—¶ï¼Œå¯ä»¥åƒæ™®é€šå‡½æ•°é‚£æ ·è°ƒç”¨, å¯ä»¥æœ‰å‚æ•°ï¼Œå¯ä»¥æœ‰è¿”å›å€¼
+- å‡½æ•°å¯¹è±¡è¶…å‡ºæ™®é€šå‡½æ•°çš„æ¦‚å¿µï¼Œå‡½æ•°å¯¹è±¡å¯ä»¥æœ‰è‡ªå·±çš„çŠ¶æ€
+- å‡½æ•°å¯¹è±¡å¯ä»¥ä½œä¸ºå‚æ•°ä¼ é€’
+*/
+
+class MyAdd
+{
+public:
+	int operator()(int v1,int v2)
+	{
+		return v1 + v2;
+	}
+
+};
+
+// 1ã€å‡½æ•°å¯¹è±¡åœ¨ä½¿ç”¨æ—¶ï¼Œå¯ä»¥åƒæ™®é€šå‡½æ•°é‚£æ ·è°ƒç”¨, å¯ä»¥æœ‰å‚æ•°ï¼Œå¯ä»¥æœ‰è¿”å›å€¼
+void test01()
+{
+	MyAdd myAdd;
+	cout <<  myAdd(10, 10) <<endl;
+}
+
+
+//2ã€å‡½æ•°å¯¹è±¡è¶…å‡ºæ™®é€šå‡½æ•°çš„æ¦‚å¿µï¼Œå‡½æ•°å¯¹è±¡å¯ä»¥æœ‰è‡ªå·±çš„çŠ¶æ€
+class MyPrint
+{
+public:
+	MyPrint()
+	{
+		this->count = 0;
+	}
+	void operator()(string test)
+	{
+		cout << test << endl;
+		this->count++;
+	}
+
+	int count; // å†…éƒ¨è‡ªå·±çŠ¶æ€
+};
+
+void test02()
+{
+	MyPrint myPrint;
+	myPrint("hello world");
+	myPrint("hello world");
+	myPrint("hello world");
+	myPrint("hello world");
+
+	cout << "myPrintè°ƒç”¨æ¬¡æ•°ä¸ºï¼š " << myPrint.count << endl;
+}
+
+//3ã€å‡½æ•°å¯¹è±¡å¯ä»¥ä½œä¸ºå‚æ•°ä¼ é€’
+void doPrint(MyPrint & mp, string test)
+{
+	mp(test);
+}
+
+void test03()
+{
+	MyPrint myPrint;
+	doPrint(myPrint, "Hello c++");
+}
+
+int main() {
+
+	//test01();
+
+	//test02();
+
+	test03();
+
+	system("pause");
+
+	return 0;
+}
