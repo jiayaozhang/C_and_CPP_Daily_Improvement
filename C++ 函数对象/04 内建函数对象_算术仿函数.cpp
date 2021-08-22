@@ -1,32 +1,32 @@
-//#include<iostream>
-//using namespace std;
-//#include <functional> //ÄÚ½¨º¯Êı¶ÔÏóÍ·ÎÄ¼ş
-//
-////ÄÚ½¨º¯Êı¶ÔÏó  ËãÊõ·Âº¯Êı
-//
-////negate Ò»Ôª·Âº¯Êı  È¡·´·Âº¯Êı
-//void test01()
-//{
-//	negate<int>n;
-//
-//	cout << n(50) << endl;
-//}
-//
-////plus  ¶şÔª·Âº¯Êı   ¼Ó·¨
-//void test02()
-//{
-//	plus<int>p;
-//
-//	cout << p(10, 20) << endl;
-//}
-//
-//int main() {
-//
-//	//test01();
-//
-//	test02();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <functional> //å†…å»ºå‡½æ•°å¯¹è±¡å¤´æ–‡ä»¶
+
+//å†…å»ºå‡½æ•°å¯¹è±¡  ç®—æœ¯ä»¿å‡½æ•°
+
+//negate ä¸€å…ƒä»¿å‡½æ•°  å–åä»¿å‡½æ•°
+void test01()
+{
+	negate<int>n;
+
+	cout << n(50) << endl;
+}
+
+//plus  äºŒå…ƒä»¿å‡½æ•°   åŠ æ³•
+void test02()
+{
+	plus<int>p;
+
+	cout << p(10, 20) << endl;
+}
+
+int main() {
+
+	//test01();
+
+	test02();
+
+	system("pause");
+
+	return 0;
+}
