@@ -1,48 +1,48 @@
-//#include<iostream>
-//using namespace std;
-//#include <vector>
-//#include <algorithm>
-//
-////·Âº¯Êý ·µ»ØÖµÀàÐÍÊÇboolÊý¾ÝÀàÐÍ£¬³ÆÎªÎ½´Ê
-////Ò»ÔªÎ½´Ê
-//
-//class GreaterFive
-//{
-//public:
-//	bool operator()(int val)
-//	{
-//		return val > 5;
-//	}
-//};
-//
-//void test01()
-//{
-//	vector<int>v;
-//	for (int i = 0; i < 10; i++)
-//	{
-//		v.push_back(i);
-//	}
-//
-//	//²éÕÒÈÝÆ÷ÖÐ ÓÐÃ»ÓÐ´óÓÚ5µÄÊý×Ö
-//	//GreaterFive() ÄäÃûº¯Êý¶ÔÏó
-//	vector<int>::iterator it =  find_if(v.begin(), v.end(), GreaterFive());
-//	if (it == v.end())
-//	{
-//		cout << "Î´ÕÒµ½" << endl;
-//	}
-//	else
-//	{
-//		cout << "ÕÒµ½ÁË´óÓÚ5µÄÊý×ÖÎª£º " << *it << endl;
-//	}
-//
-//}
-//
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <vector>
+#include <algorithm>
+
+//ä»¿å‡½æ•° è¿”å›žå€¼ç±»åž‹æ˜¯boolæ•°æ®ç±»åž‹ï¼Œç§°ä¸ºè°“è¯
+//ä¸€å…ƒè°“è¯
+
+class GreaterFive
+{
+public:
+	bool operator()(int val)
+	{
+		return val > 5;
+	}
+};
+
+void test01()
+{
+	vector<int>v;
+	for (int i = 0; i < 10; i++)
+	{
+		v.push_back(i);
+	}
+
+	//æŸ¥æ‰¾å®¹å™¨ä¸­ æœ‰æ²¡æœ‰å¤§äºŽ5çš„æ•°å­—
+	//GreaterFive() åŒ¿åå‡½æ•°å¯¹è±¡
+	vector<int>::iterator it =  find_if(v.begin(), v.end(), GreaterFive());
+	if (it == v.end())
+	{
+		cout << "æœªæ‰¾åˆ°" << endl;
+	}
+	else
+	{
+		cout << "æ‰¾åˆ°äº†å¤§äºŽ5çš„æ•°å­—ä¸ºï¼š " << *it << endl;
+	}
+
+}
+
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
