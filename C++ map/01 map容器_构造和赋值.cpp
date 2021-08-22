@@ -1,45 +1,45 @@
-//#include<iostream>
-//using namespace std;
-//#include <map>
-//
-////mapÈİÆ÷ ¹¹ÔìºÍ¸³Öµ
-//void printMap(map<int, int>&m)
-//{
-//	for (map<int, int>::iterator it = m.begin(); it != m.end(); it++)
-//	{
-//		cout << "key = " << (*it).first << " value = " << it->second << endl;
-//	}
-//	cout << endl;
-//}
-//
-//void test01()
-//{
-//	//´´½¨mapÈİÆ÷
-//	map<int, int> m;
-//
-//	m.insert(pair<int, int>(1, 10));
-//	m.insert(pair<int, int>(3, 30));
-//	m.insert(pair<int, int>(2, 20));
-//	m.insert(pair<int, int>(4, 40));
-//
-//	printMap(m);
-//
-//	//¿½±´¹¹Ôì
-//	map<int, int>m2(m);
-//	printMap(m2);
-//
-//	//¸³Öµ
-//	map<int, int>m3;
-//	m3 = m2;
-//	printMap(m3);
-//
-//}
-//
-//int main() {
-//
-//	test01();
-//
-//	system("pause");
-//
-//	return 0;
-//}
+#include<iostream>
+using namespace std;
+#include <map>
+
+//mapå®¹å™¨ æ„é€ å’Œèµ‹å€¼
+void printMap(map<int, int>&m)
+{
+	for (map<int, int>::iterator it = m.begin(); it != m.end(); it++)
+	{
+		cout << "key = " << (*it).first << " value = " << it->second << endl;
+	}
+	cout << endl;
+}
+
+void test01()
+{
+	//åˆ›å»ºmapå®¹å™¨
+	map<int, int> m;
+
+	m.insert(pair<int, int>(1, 10));
+	m.insert(pair<int, int>(3, 30));
+	m.insert(pair<int, int>(2, 20));
+	m.insert(pair<int, int>(4, 40));
+
+	printMap(m);
+
+	//æ‹·è´æ„é€ 
+	map<int, int>m2(m);
+	printMap(m2);
+
+	//èµ‹å€¼
+	map<int, int>m3;
+	m3 = m2;
+	printMap(m3);
+
+}
+
+int main() {
+
+	test01();
+
+	system("pause");
+
+	return 0;
+}
