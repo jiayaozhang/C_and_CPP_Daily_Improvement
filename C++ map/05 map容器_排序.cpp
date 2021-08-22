@@ -7,12 +7,12 @@ class MyCompare
 public:
 	bool operator()(int v1,int v2)
 	{
-		//½µĞò
+		//Â½ÂµÃÃ²
 		return v1 > v2;
 	}
 };
 
-//mapÈİÆ÷ ÅÅĞò
+//mapå®¹å™¨ æ’åº
 void test01()
 {
 	map<int, int , MyCompare>m;
