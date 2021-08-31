@@ -1,45 +1,98 @@
 
-# STL 六大组件
+# unique_lock（类模板）详解
 
-## 1. 容器：  各种数据结构，如vector，list，deque, set, map等，用来存放数据
-
-容器：置物之所也
-STL容器就是将运用最广泛的一些数据结构实现出来
-常用的数据结构：数组, 链表,树, 栈, 队列, 集合, 映射表等
-这些容器分为序列式容器和关联式容器两种:
-序列式容器:强调值的排序，序列式容器中的每个元素均有固定的位置。 
-关联式容器:二叉树结构，各元素之间没有严格的物理上的顺序关系
+![image](https://user-images.githubusercontent.com/38579506/131488386-fa3a882e-acdc-4928-8210-47cd64656fa4.png)
 
 
-## 2. 算法：  各种常用算法，如sort，find， copy， for_each等
+## 1. unique_lock取代lock_guard
 
-算法：问题之解法也
-有限的步骤，解决逻辑或数学上的问题，这一门学科我们叫做算法(Algorithms)
-算法分为:质变算法和非质变算法。
-质变算法：是指运算过程中会更改区间内的元素的内容。例如拷贝，替换，删除等等
-非质变算法：是指运算过程中不会更改区间内的元素内容，例如查找、计数、遍历、寻找极值等等
+* unique_lock比lock_guard灵活很多（多出来很多用法），效率差一点。
+* unique_lock myUniLock(myMutex);
 
 
-## 3. 迭代器：扮演了容器与算法之间的胶合剂
+## 2. unique_lock的第二个参数
 
-迭代器：容器和算法之间粘合剂
-提供一种方法，使之能够依序寻访某个容器所含的各个元素，而又无需暴露该容器的内部表示方式。
-每个容器都有自己专属的迭代器
-迭代器使用非常类似于指针，初学阶段我们可以先理解迭代器为指针
+std::adopt_lock：
+
+* 表示这个互斥量已经被lock()，即不需要在构造函数中lock这个互斥量了。
+* 前提：必须提前lock
+* lock_guard中也可以用这个参数
+
+std::try_to_lock：
+
+* 尝试用mutx的lock()去锁定这个mutex，但如果没有锁定成功，会立即返回，不会阻塞在那里；
+* 使用try_to_lock的原因是防止其他的线程锁定mutex太长时间，导致本线程一直阻塞在lock这个地方
+* 前提：不能提前lock();
+* owns_locks()方法判断是否拿到锁，如拿到返回true
+
+std::defer_lock：
+
+* 如果没有第二个参数就对mutex进行加锁，加上defer_lock是始化了一个没有加锁的mutex
+* 不给它加锁的目的是以后可以调用unique_lock的一些方法
+* 前提：不能提前lock
 
 
-常用的容器中迭代器种类为双向迭代器，和随机访问迭代器
+## 3. unique_lock的成员函数（前三个与std::defer_lock联合使用）
+
+3.1 lock()：加锁
+
+```js
+
+unique_lock<mutex> myUniLock(myMutex， defer_lock);
+myUniLock.lock();
+
+```
+
+3.2 unlock()：解锁
+
+```js
+
+unique_lock<mutex> myUniLock(myMutex， defer_lock);
+myUniLock.lock();
+//处理一些共享代码
+myUniLock.unlock();
+//处理一些非共享代码
+myUniLock.lock();
+//处理一些共享代码
+
+```
+因为一些非共享代码要处理，可以暂时先unlock()，用其他线程把它们处理了，处理完后再lock()
 
 
-## 4. 仿函数：行为类似函数，可作为算法的某种策略
+3.3 try_lock()：尝试给互斥量加锁
+如果拿不到锁，返回false，否则返回true。
+
+3.4 release()：
+
+* unique_lock
+myUniLock(myMutex);相当于把myMutex和myUniLock绑定在了一起，release()就是解除绑定，返回它所管理的mutex对象的指针，并释放所有权
+* mutex* ptx = myUniLock.release();所有权由ptx接管，如果原来mutex对象处理加锁状态，就需要ptx在以后进行解锁了。
+lock的代码段越少，执行越快，整个程序的运行效率越高。
+
+* a.锁住的代码少，叫做粒度细，执行效率高；
+* b.锁住的代码多，叫做粒度粗，执行效率低；
 
 
 
-## 5. 适配器：一种用来修饰容器或者仿函数迭代器接口的东西
+## 4. unique_lock所有权的传递
+
+unique_lock myUniLock(myMutex);把myMutex和myUniLock绑定在了一起，也就是myUniLock拥有myMutex的所有权
+1. 使用move转移
+
+* myUniLock拥有myMutex的所有权，myUniLock可以把自己对myMutex的所有权转移，但是不能复制。
+* unique_lock myUniLock2(std::move(myUniLock));
+现在myUniLock2拥有myMutex的所有权。
+
+2. 在函数中return一个临时变量，即可以实现转移
 
 
+```js
+unique_lock<mutex> aFunction()
+{
+    unique_lock<mutex> myUniLock(myMutex);
+    //移动构造函数那里讲从函数返回一个局部的unique_lock对象是可以的
+    //返回这种局部对象会导致系统生成临时的unique_lock对象，并调用unique_lock的移动构造函数
+    return myUniLock;
+}
 
-
-
-## 6. 空间配置器：负责空间的配置与管理
-
+```
