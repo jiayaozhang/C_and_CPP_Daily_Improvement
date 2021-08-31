@@ -1,45 +1,139 @@
 
-# STL 六大组件
+# 单例设计模式共享数据分析、解决，call_once
 
-## 1. 容器：  各种数据结构，如vector，list，deque, set, map等，用来存放数据
+![image](https://user-images.githubusercontent.com/38579506/131490283-5adf9a61-8368-422a-b741-416cc5c0bf2e.png)
 
-容器：置物之所也
-STL容器就是将运用最广泛的一些数据结构实现出来
-常用的数据结构：数组, 链表,树, 栈, 队列, 集合, 映射表等
-这些容器分为序列式容器和关联式容器两种:
-序列式容器:强调值的排序，序列式容器中的每个元素均有固定的位置。 
-关联式容器:二叉树结构，各元素之间没有严格的物理上的顺序关系
+1.设计模式
+
+* 程序灵活，维护起来可能方便，用设计模式理念写出来的代码很晦涩，但是别人接管、阅读代码都会很痛苦
+* 老外应付特别大的项目时，把项目的开发经验、模块划分经验，总结整理成设计模式
+* 中国零几年设计模式刚开始火时，总喜欢拿一个设计模式往上套，导致一个小小的项目总要加几个设计模式，本末倒置
+* 设计模式有其独特的优点，要活学活用，不要深陷其中，生搬硬套
+
+2.单例设计模式：
+整个项目中，有某个或者某些特殊的类，只能创建一个属于该类的对象。
+单例类：只能生成一个对象。
+
+3.单例设计模式共享数据分析、解决
+面临问题：需要在自己创建的线程中来创建单例类的对象，这种线程可能不止一个。我们可能面临GetInstance()这种成员函数需要互斥。
+可以在加锁前判断m_instance是否为空，否则每次调用Singelton::getInstance()都要加锁，十分影响效率。
+
+```js
+
+#include <iostream>	
+#include <mutex>
+using namespace	std;
+
+mutex myMutex;
+//懒汉模式
+class Singelton
+{
+public:
+	static Singelton * getInstance() {
+         //双重锁定 提高效率
+		if (instance == NULL) {
+			lock_guard<mutex> myLockGua(myMutex);
+			if (instance == NULL) {
+				instance = new Singelton;
+			}
+		}
+		return instance;
+	}
+private:
+	Singelton() {}
+	static Singelton *instance;
+};
+Singelton * Singelton::instance = NULL;
+
+//饿汉模式
+class Singelton2 {
+public:
+	static Singelton2* getInstance() {
+		return instance;
+	}
+private:
+	Singelton2() {}
+	static Singelton2 * instance;
+};
+Singelton2 * Singelton2::instance = new Singelton2;
+
+int main(void)
+{
+	Singelton * singer = Singelton::getInstance();
+	Singelton * singer2 = Singelton::getInstance();
+	if (singer == singer2)
+		cout << "二者是同一个实例" << endl;
+	else
+		cout << "二者不是同一个实例" << endl;
+
+	cout << "----------		以下 是 饿汉式	------------" << endl;
+	Singelton2 * singer3 = Singelton2::getInstance();
+	Singelton2 * singer4 = Singelton2::getInstance();
+	if (singer3 == singer4)
+		cout << "二者是同一个实例" << endl;
+	else
+		cout << "二者不是同一个实例" << endl;
+
+	return 0;
+}
+```
+
+如果觉得在单例模式new了一个对象，而没有自己delete掉，这样不合理。可以增加一个类中类CGarhuishou，new一个单例类时创建一个静态的CGarhuishou对象，这样在程序结束时会调用CGarhuishou的析构函数，释放掉new出来的单例对象。
+
+```js
+class Singelton
+{
+public:
+	static Singelton * getInstance() {
+         if (instance == NULL) {
+		static CGarhuishou huishou;
+		instance = new Singelton;
+         }
+         return instance;
+	}
+	class CGarhuishou {
+	public:
+		~CGarhuishou()
+		{
+			if (Singelton::instance)
+			{
+				delete Singelton::instance;
+				Singelton::instance = NULL;
+			}
+		}
+	};
+private:
+	Singelton() {}
+	static Singelton *instance;
+};
+Singelton * Singelton::instance = NULL;
+```
+
+4.std::call_once()：
+函数模板，该函数的第一个参数为标记，第二个参数是一个函数名（如a()）。
+功能：能够保证函数a()只被调用一次。具备互斥量的能力，而且比互斥量消耗的资源更少，更高效。
+call_once()需要与一个标记结合使用，这个标记为std::once_flag；其实once_flag是一个结构，call_once()就是通过标记来决定函数是否执行，调用成功后，就把标记设置为一种已调用状态。
+
+多个线程同时执行时，一个线程会等待另一个线程先执行。
 
 
-## 2. 算法：  各种常用算法，如sort，find， copy， for_each等
-
-算法：问题之解法也
-有限的步骤，解决逻辑或数学上的问题，这一门学科我们叫做算法(Algorithms)
-算法分为:质变算法和非质变算法。
-质变算法：是指运算过程中会更改区间内的元素的内容。例如拷贝，替换，删除等等
-非质变算法：是指运算过程中不会更改区间内的元素内容，例如查找、计数、遍历、寻找极值等等
-
-
-## 3. 迭代器：扮演了容器与算法之间的胶合剂
-
-迭代器：容器和算法之间粘合剂
-提供一种方法，使之能够依序寻访某个容器所含的各个元素，而又无需暴露该容器的内部表示方式。
-每个容器都有自己专属的迭代器
-迭代器使用非常类似于指针，初学阶段我们可以先理解迭代器为指针
-
-
-常用的容器中迭代器种类为双向迭代器，和随机访问迭代器
-
-
-## 4. 仿函数：行为类似函数，可作为算法的某种策略
-
-
-
-## 5. 适配器：一种用来修饰容器或者仿函数迭代器接口的东西
-
-
-
-
-
-## 6. 空间配置器：负责空间的配置与管理
-
+```js
+once_flag g_flag;
+class Singelton
+{
+public:
+    static void CreateInstance()//call_once保证其只被调用一次
+    {
+        instance = new Singelton;
+    }
+    //两个线程同时执行到这里，其中一个线程要等另外一个线程执行完毕
+	static Singelton * getInstance() {
+         call_once(g_flag, CreateInstance);
+         return instance;
+	}
+private:
+	Singelton() {}
+	static Singelton *instance;
+};
+Singelton * Singelton::instance = NULL;
+```
