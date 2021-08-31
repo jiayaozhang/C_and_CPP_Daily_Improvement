@@ -1,45 +1,121 @@
 
-# STL 六大组件
+# condition_variable、wait、notify_one、notify_all
 
-## 1. 容器：  各种数据结构，如vector，list，deque, set, map等，用来存放数据
-
-容器：置物之所也
-STL容器就是将运用最广泛的一些数据结构实现出来
-常用的数据结构：数组, 链表,树, 栈, 队列, 集合, 映射表等
-这些容器分为序列式容器和关联式容器两种:
-序列式容器:强调值的排序，序列式容器中的每个元素均有固定的位置。 
-关联式容器:二叉树结构，各元素之间没有严格的物理上的顺序关系
+![image](https://user-images.githubusercontent.com/38579506/131489184-7c0428c0-bfa5-41be-9836-3182a6cb5aea.png)
 
 
-## 2. 算法：  各种常用算法，如sort，find， copy， for_each等
+## 条件变量condition_variable、wait、notify_one、notify_all
 
-算法：问题之解法也
-有限的步骤，解决逻辑或数学上的问题，这一门学科我们叫做算法(Algorithms)
-算法分为:质变算法和非质变算法。
-质变算法：是指运算过程中会更改区间内的元素的内容。例如拷贝，替换，删除等等
-非质变算法：是指运算过程中不会更改区间内的元素内容，例如查找、计数、遍历、寻找极值等等
+std::condition_variable实际上是一个类，是一个和条件相关的类，说白了就是等待一个条件达成
 
-
-## 3. 迭代器：扮演了容器与算法之间的胶合剂
-
-迭代器：容器和算法之间粘合剂
-提供一种方法，使之能够依序寻访某个容器所含的各个元素，而又无需暴露该容器的内部表示方式。
-每个容器都有自己专属的迭代器
-迭代器使用非常类似于指针，初学阶段我们可以先理解迭代器为指针
-
-
-常用的容器中迭代器种类为双向迭代器，和随机访问迭代器
+```js
+std::mutex mymutex1;
+std::unique_lock<std::mutex> sbguard1(mymutex1);
+std::condition_variable condition;
+condition.wait(sbguard1, [this] {if (!msgRecvQueue.empty())
+                                    return true;
+                                return false;
+                                });
+ 
+condition.wait(sbguard1);
+```
 
 
-## 4. 仿函数：行为类似函数，可作为算法的某种策略
+wait()用来等一个东西
+
+如果第二个参数的lambda表达式返回值是false，那么wait()将解锁互斥量，并阻塞到本行
+如果第二个参数的lambda表达式返回值是true，那么wait()直接返回并继续执行。
+
+阻塞到什么时候为止呢？阻塞到其他某个线程调用notify_one()成员函数为止；
+
+如果没有第二个参数，那么效果跟第二个参数lambda表达式返回false效果一样
+
+wait()将解锁互斥量，并阻塞到本行，阻塞到其他某个线程调用notify_one()成员函数为止。
+
+当其他线程用notify_one()将本线程wait()唤醒后，这个wait恢复后
+
+1、wait()不断尝试获取互斥量锁，如果获取不到那么流程就卡在wait()这里等待获取，如果获取到了，那么wait()就继续执行，获取到了锁
+
+## 如果wait有第二个参数就判断这个lambda表达式。
+
+a)如果表达式为false，那wait又对互斥量解锁，然后又休眠，等待再次被notify_one()唤醒
+b)如果lambda表达式为true，则wait返回，流程可以继续执行（此时互斥量已被锁住）。
+
+## 如果wait没有第二个参数，则wait返回，流程走下去。
+
+流程只要走到了wait()下面则互斥量一定被锁住了
 
 
+```js
+#include <thread>
+#include <iostream>
+#include <list>
+#include <mutex>
+using namespace std;
+ 
+class A {
+public:
+    void inMsgRecvQueue() {
+        for (int i = 0; i < 100000; ++i) 
+        {
+            cout << "inMsgRecvQueue插入一个元素" << i << endl;
 
-## 5. 适配器：一种用来修饰容器或者仿函数迭代器接口的东西
+            std::unique_lock<std::mutex> sbguard1(mymutex1);
+            msgRecvQueue.push_back(i); 
+            //尝试把wait()线程唤醒,执行完这行，
+            //那么outMsgRecvQueue()里的wait就会被唤醒
+            //只有当另外一个线程正在执行wait()时notify_one()才会起效，否则没有作用
+            condition.notify_one();
+        }
+	}
+ 
+	void outMsgRecvQueue() {
+        int command = 0;
+        while (true) {
+            std::unique_lock<std::mutex> sbguard2(mymutex1);
+            // wait()用来等一个东西
+            // 如果第二个参数的lambda表达式返回值是false，那么wait()将解锁互斥量，并阻塞到本行
+            // 阻塞到什么时候为止呢？阻塞到其他某个线程调用notify_one()成员函数为止；
+            //当 wait() 被 notify_one() 激活时，会先执行它的 条件判断表达式 是否为 true，
+            //如果为true才会继续往下执行
+            condition.wait(sbguard2, [this] {
+                if (!msgRecvQueue.empty())
+                    return true;
+                return false;});
+            command = msgRecvQueue.front();
+            msgRecvQueue.pop_front();
+            //因为unique_lock的灵活性，我们可以随时unlock，以免锁住太长时间
+            sbguard2.unlock(); 
+            cout << "outMsgRecvQueue()执行，取出第一个元素" << endl;
+        }
+	}
+ 
+private:
+	std::list<int> msgRecvQueue;
+	std::mutex mymutex1;
+	std::condition_variable condition;
+};
+ 
+int main() {
+	A myobja;
+	std::thread myoutobj(&A::outMsgRecvQueue, &myobja);
+	std::thread myinobj(&A::inMsgRecvQueue, &myobja);
+	myinobj.join();
+	myoutobj.join();
+}
 
 
+```
 
 
+## 深入思考
 
-## 6. 空间配置器：负责空间的配置与管理
+上面的代码可能导致出现一种情况：
+因为outMsgRecvQueue()与inMsgRecvQueue()并不是一对一执行的，所以当程序循环执行很多次以后，可能在msgRecvQueue 中已经有了很多消息，但是，outMsgRecvQueue还是被唤醒一次只处理一条数据。这时可以考虑把outMsgRecvQueue多执行几次，或者对inMsgRecvQueue进行限流。
 
+
+## notify_all()
+
+notify_one()：通知一个线程的wait()
+
+notify_all()：通知所有线程的wait()
