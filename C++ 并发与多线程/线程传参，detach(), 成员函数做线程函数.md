@@ -1,45 +1,150 @@
 
-# STL 六大组件
+# 线程传参详解，detach()大坑，成员函数做线程函数
 
-## 1. 容器：  各种数据结构，如vector，list，deque, set, map等，用来存放数据
-
-容器：置物之所也
-STL容器就是将运用最广泛的一些数据结构实现出来
-常用的数据结构：数组, 链表,树, 栈, 队列, 集合, 映射表等
-这些容器分为序列式容器和关联式容器两种:
-序列式容器:强调值的排序，序列式容器中的每个元素均有固定的位置。 
-关联式容器:二叉树结构，各元素之间没有严格的物理上的顺序关系
+![image](https://user-images.githubusercontent.com/38579506/131486527-6b3f964e-efba-4e59-a005-fcee8bd9df68.png)
 
 
-## 2. 算法：  各种常用算法，如sort，find， copy， for_each等
+## 一、传递临时对象作为线程参数
 
-算法：问题之解法也
-有限的步骤，解决逻辑或数学上的问题，这一门学科我们叫做算法(Algorithms)
-算法分为:质变算法和非质变算法。
-质变算法：是指运算过程中会更改区间内的元素的内容。例如拷贝，替换，删除等等
-非质变算法：是指运算过程中不会更改区间内的元素内容，例如查找、计数、遍历、寻找极值等等
+### 1.1  要避免的陷阱1：
+
+```js
+
+#include <iostream>
+#include <thread>
+using namespace std;
+
+void myPrint(const int &i, char* pmybuf)
+{
+	//如果线程从主线程detach了
+	//i不是mvar真正的引用，实际上值传递，即使主线程运行完毕了，子线程用i仍然是安全的，但仍不推荐传递引用
+	//推荐改为const int i
+	cout << i << endl;
+	//pmybuf还是指向原来的字符串，所以这么写是不安全的
+	cout << pmybuf << endl;
+}
+
+int main()
+{
+	int mvar = 1;
+	int& mvary = mvar;
+	char mybuf[] = "this is a test";
+	thread myThread(myPrint, mvar, mybuf);//第一个参数是函数名，后两个参数是函数的参数
+	myThread.join();
+	//myThread.detach();
+	
+	cout << "Hello World!" << endl;
+}
+
+```
+
+### 1.2  要避免的陷阱2：
+
+```js
+#include <iostream>
+#include <thread>
+#include <string>
+using namespace std;
+
+void myPrint(const int i, const string& pmybuf)
+{
+	cout << i << endl;
+	cout << pmybuf << endl;
+}
+
+int main()
+{
+	int mvar = 1;
+	int& mvary = mvar;
+	char mybuf[] = "this is a test";
+	//如果detach了，这样仍然是不安全的
+	//因为存在主线程运行完了，mybuf被回收了，系统采用mybuf隐式类型转换成string
+	//推荐先创建一个临时对象thread myThread(myPrint, mvar, string(mybuf));就绝对安全了。。。。
+	thread myThread(myPrint, mvar, mybuf);
+	myThread.join();
+	//myThread.detach();
+
+	cout << "Hello World!" << endl;
+}
+
+```
 
 
-## 3. 迭代器：扮演了容器与算法之间的胶合剂
+### 1.3总结
 
-迭代器：容器和算法之间粘合剂
-提供一种方法，使之能够依序寻访某个容器所含的各个元素，而又无需暴露该容器的内部表示方式。
-每个容器都有自己专属的迭代器
-迭代器使用非常类似于指针，初学阶段我们可以先理解迭代器为指针
-
-
-常用的容器中迭代器种类为双向迭代器，和随机访问迭代器
+* 如果传递int这种简单类型，推荐使用值传递，不要用引用
+* 如果传递类对象，避免使用隐式类型转换，全部都是创建线程这一行就创建出临时对象，然后在函数参数里，用引用来接，否则还会创建出一个对象
+* 终极结论：建议不使用detach
 
 
-## 4. 仿函数：行为类似函数，可作为算法的某种策略
+## 临时对象作为线程参数继续讲
+
+线程id概念
+
+* id是个数字，每个线程（不管是主线程还是子线程）实际上都对应着一个数字，而且每个线程对应的这个数字都不一样
+* 线程id可以用C++标准库里的函数来获取。std::this_thread::get_id()来获取
+
+## 传递类对象、智能指针作为线程参数
+
+```js
+#include <iostream>
+#include <thread>
+using namespace std;
+
+class A {
+public:
+	mutable int m_i; //m_i即使实在const中也可以被修改
+	A(int i) :m_i(i) {}
+};
+
+void myPrint(const A& pmybuf)
+{
+	pmybuf.m_i = 199;
+	cout << "子线程myPrint的参数地址是" << &pmybuf << "thread = " << std::this_thread::get_id() << endl;
+}
+
+int main()
+{
+	A myObj(10);
+	//myPrint(const A& pmybuf)中引用不能去掉，如果去掉会多创建一个对象
+	//const也不能去掉，去掉会出错
+	//即使是传递的const引用，但在子线程中还是会调用拷贝构造函数构造一个新的对象，
+	//所以在子线程中修改m_i的值不会影响到主线程
+	//如果希望子线程中修改m_i的值影响到主线程，可以用thread myThread(myPrint, std::ref(myObj));
+	//这样const就是真的引用了，myPrint定义中的const就可以去掉了，类A定义中的mutable也可以去掉了
+	thread myThread(myPrint, myObj);
+	myThread.join();
+	//myThread.detach();
+
+	cout << "Hello World!" << endl;
+}
+
+```
 
 
+```js
+#include <iostream>
+#include <thread>
+#include <memory>
+using namespace std;
 
-## 5. 适配器：一种用来修饰容器或者仿函数迭代器接口的东西
+void myPrint(unique_ptr<int> ptn)
+{
+	cout << "thread = " << std::this_thread::get_id() << endl;
+}
 
+int main()
+{
+	unique_ptr<int> up(new int(10));
+	//独占式指针只能通过std::move()才可以传递给另一个指针
+	//传递后up就指向空，新的ptn指向原来的内存
+	//所以这时就不能用detach了，因为如果主线程先执行完，ptn指向的对象就被释放了
+	thread myThread(myPrint, std::move(up));
+	myThread.join();
+	//myThread.detach();
 
+	return 0;
+}
 
-
-
-## 6. 空间配置器：负责空间的配置与管理
+```
 
