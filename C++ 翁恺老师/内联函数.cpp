@@ -1,25 +1,13 @@
-#include "stdafx.h"
-#include <memory>
+## to define a function with an argument list, defaults must be added from right to left.
 
-// 为什么有强弱指针
-// A{
-//   B对象智能指针 （引用次数 1）  需要lock函数提升 
-// weak_ptr_uses_count
-// }
-// B{
-//  A 对象智能指针 （引用次数 2）  
-// shared_ptr_uses_count
-//}
+int harpo( int n, int m = 4, int j = 5 );
 
-int _tmain( int argc, _TCHAR* argv[])
-{
-    std::shared_ptr<int> sptr(new int(3));
-    std::shared_ptr<int> sptr2 = sptr2;
-    std::weak_ptr<int> wptr = sptr;
+int chico( int n, int m = 6, int j ); // illegal
 
-    if(!wptr.expired()){
-        std::shared_ptr<int> sptr3 = wptr.lock();
-    }
+int groucho(int k = 1, int m = 2, int n = 3);
 
-    return 0;
-}
+beeps = harpo(2);
+beeps = harpo(1,8);
+beeps = harpo(8,7,6);
+
+
