@@ -1,25 +1,36 @@
-#include "stdafx.h"
-#include <memory>
+#include<iostream>
+#include<string>
+using namespace std;
 
-// 为什么有强弱指针
-// A{
-//   B对象智能指针 （引用次数 1）  需要lock函数提升 
-// weak_ptr_uses_count
-// }
-// B{
-//  A 对象智能指针 （引用次数 2）  
-// shared_ptr_uses_count
-//}
+static int objectCount = 0;
 
-int _tmain( int argc, _TCHAR* argv[])
-{
-    std::shared_ptr<int> sptr(new int(3));
-    std::shared_ptr<int> sptr2 = sptr2;
-    std::weak_ptr<int> wptr = sptr;
-
-    if(!wptr.expired()){
-        std::shared_ptr<int> sptr3 = wptr.lock();
+class HowMany {
+public:
+    HowMany() { objectCount++; print("howmany()"); }
+    void print(const string& msg = "") {
+        if (msg.size()!= 0) cout << msg << ":";
+        cout << "objectCount = " << objectCount << endl;
     }
+    ~HowMany() {
+        objectCount--;
+        print("~Howmany()");
+    }
+};
 
-    return 0;
+HowMany f(HowMany x) {
+    cout << "begin of f" << endl;
+    x.print("x argument inside f()");
+    cout << "end of f" << endl;
+    return x;
 }
+
+int main()
+{
+    HowMany h;
+    h.print("after construction of h");
+    HowMany h2 = f(h);
+    h.print("after call to f()");
+}
+
+拷贝构造的定义，不是字节对字节的拷贝，而是成员变量对成员变量的拷贝 如果成员变量有指针，指针的拷贝就是指向同一片区域，有const&：就是捆绑同一个变量
+
