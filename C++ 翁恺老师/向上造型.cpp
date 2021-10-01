@@ -1,25 +1,39 @@
-#include "stdafx.h"
-#include <memory>
+if B is a A, you can use a B anywhere an A can be used
 
-// 为什么有强弱指针
-// A{
-//   B对象智能指针 （引用次数 1）  需要lock函数提升 
-// weak_ptr_uses_count
-// }
-// B{
-//  A 对象智能指针 （引用次数 2）  
-// shared_ptr_uses_count
-//}
+if B is a A, then everything that is true for A is also true for B
 
-int _tmain( int argc, _TCHAR* argv[])
+#include<iostream>
+using namespace std;
+
+class A{
+    int i;
+public :
+    
+    A():i(10) {}
+};
+
+class B: public A{
+
+};
+
+
+int main()
 {
-    std::shared_ptr<int> sptr(new int(3));
-    std::shared_ptr<int> sptr2 = sptr2;
-    std::weak_ptr<int> wptr = sptr;
-
-    if(!wptr.expired()){
-        std::shared_ptr<int> sptr3 = wptr.lock();
-    }
-
+    A a;
+    B b;
+    
+    cout << a.i << "" << b.i << endl;
+    cout << sizeof(a) << " " << sizeof(b) << endl;
+    int *p = (int*)&a;
+    cout << p << " " << *p << endl;
+    *p = 20;
+    cout << a.i << endl;
+    p = (int*)&b;
+    cout << p << " " << *P << endl;
     return 0;
 }
+
+// 10 10 
+// 4 4 
+//0x7ff57640 10
+//0x7ffefd40 10
