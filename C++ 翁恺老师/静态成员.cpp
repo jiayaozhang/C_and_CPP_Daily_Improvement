@@ -1,25 +1,35 @@
-#include "stdafx.h"
-#include <memory>
+static 对象
 
-// 为什么有强弱指针
-// A{
-//   B对象智能指针 （引用次数 1）  需要lock函数提升 
-// weak_ptr_uses_count
-// }
-// B{
-//  A 对象智能指针 （引用次数 2）  
-// shared_ptr_uses_count
-//}
 
-int _tmain( int argc, _TCHAR* argv[])
+6.全局的static对象，在链接时分配空间，在函数一运行，main函数运行之前构造，
+ 初始化。程序结束时析构。
+
+7.多个文件之间的全局变量初始化无确定顺序。
+
+//---------------------------------------------------------------------
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+class A{
+public:
+    A() {  }
+    void print() { cout << i << endl; }
+    void set(int i) {this->i = i; }
+   static  int i;
+};
+
+int A::i = 20;
+
+int main()
 {
-    std::shared_ptr<int> sptr(new int(3));
-    std::shared_ptr<int> sptr2 = sptr2;
-    std::weak_ptr<int> wptr = sptr;
-
-    if(!wptr.expired()){
-        std::shared_ptr<int> sptr3 = wptr.lock();
-    }
-
+    A a, b;
+    a.set(10);
+   /* b.print();*/
+  /*  cout << a.i << endl;
+    cout << A::i << endl;*/
     return 0;
 }
+
+//----------------------------------------------------------------------------
