@@ -1,25 +1,32 @@
-#include "stdafx.h"
-#include <memory>
+多态性
+virtual是指父类的所有子类中，如果重新写了一模一样的成员函数（名字一样，参数列表也相同），那么那么父类和子类中的这个一样的成员函数就是有联系的，如果不加这个virtual，子类和父类的同名函数是没有联系的；子类中的同名的成员函数前面可以加virtual也可以不加，即使不加，这个成员函数也依然是virtual的函数，但是建议加上；
+virtual 的作用就是通过指针或者引用告诉编译器这个函数暂时无法确定功能，只有在运行的时候才能确定下来，给了什么指针，就会进行哪个子类的同名函数的调用；
+多态性建筑在两个事情上面：upcast（向上控制），dynamic
+bonding（动态绑定，由指针指向的对象决定）
+如果一个函数是virtual，那么就是动态绑定，需要动态类型，如果不是virtual，就是静态绑定；
 
-// 为什么有强弱指针
-// A{
-//   B对象智能指针 （引用次数 1）  需要lock函数提升 
-// weak_ptr_uses_count
-// }
-// B{
-//  A 对象智能指针 （引用次数 2）  
-// shared_ptr_uses_count
-//}
+多态的实现：
+1.只要类中有一个virtual函数，那么他的对象会在第一个4字节中存储一个指向本对象Vtable表的指针vptr 。vtable中存储着这个类的所有virtual函数的地址，即同一个类的两个不同对象的vptr是一样的，都指向这个类的vtable。
 
-int _tmain( int argc, _TCHAR* argv[])
-{
-    std::shared_ptr<int> sptr(new int(3));
-    std::shared_ptr<int> sptr2 = sptr2;
-    std::weak_ptr<int> wptr = sptr;
+2.子类的vtable与父类的vtable的结构是一样的，但具体的值是不一定一样。若子类新增加了一个virtual函数，那么此子类的vtable后面新增加了此函数的地址。
 
-    if(!wptr.expired()){
-        std::shared_ptr<int> sptr3 = wptr.lock();
-    }
+3.把子类的对象复制给父类的对象，只是其中成员变量的值发生了赋值，而对象的vptr没有发生改变，还是指向其原有类的vtable。或者说在赋值过程中vptr是没有发生改变的。
 
-    return 0;
+4.若类中有virtual函数，则析构函数必须是virtual的。原因在于：若你new了一个子类的对象交给父类的指针，当你delete此指针时，默认调用的是父类的析构函数。只有析构函数是virtual的，则可以动态绑定子类自己的析构函数。
+
+5.override
+父类和子类的两个virtual函数名称及参数表都相同即此函数构成override（覆盖或改写）
+
+在override函数中想要调用父类的函数则可如下调用：
+D::func( ){
+Base::func( );
 }
+
+6.如果父类的virtual函数返回了父类的指针或父类的引用，则子类的virtual函数可以返回子类的指针或子类的引用。但若返回对象本身则不可以。因为只有通过指针和引用才构成upcast关系。
+
+7.overload和override
+
+overload是发生在不同参数的同名函数之间，根据不同的参数调用不同的函数。
+override是发生在子类和父类中，相同参数的同名函数之间，根据类的不同调用不同的函数。
+
+若override和overload同时存在，则发生namehiding，即在子类中，父类的所有同名函数都被隐藏。需要在子类中override。
