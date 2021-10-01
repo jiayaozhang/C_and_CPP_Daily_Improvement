@@ -1,25 +1,16 @@
-#include "stdafx.h"
-#include <memory>
+//const value can be exploited
 
-// 为什么有强弱指针
-// A{
-//   B对象智能指针 （引用次数 1）  需要lock函数提升 
-// weak_ptr_uses_count
-// }
-// B{
-//  A 对象智能指针 （引用次数 2）  
-// shared_ptr_uses_count
-//}
+const int class_size = 12;
 
-int _tmain( int argc, _TCHAR* argv[])
-{
-    std::shared_ptr<int> sptr(new int(3));
-    std::shared_ptr<int> sptr2 = sptr2;
-    std::weak_ptr<int> wptr = sptr;
+int finalGrade[class_size];  //ok
 
-    if(!wptr.expired()){
-        std::shared_ptr<int> sptr3 = wptr.lock();
-    }
+//const的变量初始化以后不能被赋值，不能被修改；这种const的变量对c++来说仍然是变量而不是常数，
+//因为变量意味着要在内存里给你分配地址。
 
-    return 0;
-}
+int x;
+cin >> x;
+const int size = x;
+double classAverage[size]; // error!
+
+
+//这里之所以错误是因为编译器需要知道本地变量有多大，然后给他分配内存
