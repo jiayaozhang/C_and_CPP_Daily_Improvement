@@ -19,13 +19,4 @@ Learn c and cpp language. I provide some random exercises when I am learning the
 4. external C
 
 
-TODO:
-1. 虚函数和虚表
-2. c++内存管理
-3. 堆和栈的区别
-4. 智能指针
-5. 数据结构在c++d 应用
-6. C++ STL库中容器的应用以及底层实现
-7. C++STL算法sort和find算法
-
-
+![Screenshot from 2022-01-08 15-40-00](https://user-images.githubusercontent.com/38579506/148636244-13c5214e-ff30-435d-9800-c02e404c904f.png)
