@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/janice/Documents/Dev/C_and_CPP_Daily_Improvement/TheChernoCppTutorial/HelloWorld/build",
+  "command": "/usr/bin/g++  -Wall -Werror -std=c++14 -g -o CMakeFiles/HelloWorld.dir/src/Log.cpp.o -c /home/janice/Documents/Dev/C_and_CPP_Daily_Improvement/TheChernoCppTutorial/HelloWorld/src/Log.cpp",
+  "file": "/home/janice/Documents/Dev/C_and_CPP_Daily_Improvement/TheChernoCppTutorial/HelloWorld/src/Log.cpp"
+},
+{
+  "directory": "/home/janice/Documents/Dev/C_and_CPP_Daily_Improvement/TheChernoCppTutorial/HelloWorld/build",
+  "command": "/usr/bin/g++  -Wall -Werror -std=c++14 -g -o CMakeFiles/HelloWorld.dir/src/Math.cpp.o -c /home/janice/Documents/Dev/C_and_CPP_Daily_Improvement/TheChernoCppTutorial/HelloWorld/src/Math.cpp",
+  "file": "/home/janice/Documents/Dev/C_and_CPP_Daily_Improvement/TheChernoCppTutorial/HelloWorld/src/Math.cpp"
+},
+{
+  "directory": "/home/janice/Documents/Dev/C_and_CPP_Daily_Improvement/TheChernoCppTutorial/HelloWorld/build",
+  "command": "/usr/bin/g++  -Wall -Werror -std=c++14 -g -o CMakeFiles/HelloWorld.dir/src/main.cpp.o -c /home/janice/Documents/Dev/C_and_CPP_Daily_Improvement/TheChernoCppTutorial/HelloWorld/src/main.cpp",
+  "file": "/home/janice/Documents/Dev/C_and_CPP_Daily_Improvement/TheChernoCppTutorial/HelloWorld/src/main.cpp"
+}
+]

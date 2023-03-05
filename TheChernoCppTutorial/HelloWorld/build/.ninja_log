@@ -1,0 +1,7 @@
+# ninja log v5
+0	146	1678007307681535813	CMakeFiles/HelloWorld.dir/src/main.cpp.o	cd411fe03bc982
+0	15	1677990641013182531	CMakeFiles/HelloWorld.dir/src/Math.cpp.o	d4970302402fa250
+1	146	1678007279865193059	CMakeFiles/HelloWorld.dir/src/Log.cpp.o	e49f62eea269daae
+146	182	1678007307717536256	HelloWorld	804f4eb9aace3bd7
+0	146	1678007333577854126	CMakeFiles/HelloWorld.dir/src/main.cpp.o	cd411fe03bc982
+146	184	1678007333617854617	HelloWorld	804f4eb9aace3bd7
