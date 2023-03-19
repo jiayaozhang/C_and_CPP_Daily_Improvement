@@ -12,11 +12,14 @@ Learn c and cpp language. I provide some random exercises when I am learning the
 1. firstly, we do the gcc test.cpp then ./a.out but we can add ./a.out > out.txt to save in a txt file and we can add ./a.out < input.txt to add an input file
 2. sometimes I prefer to use the linux system, so i ssh through the VS code. ssh zhangj0o@10.68.74.3 PS: the locked screen passwords
 
+
 ## 
 1. C++ static function https://en.cppreference.com/w/cpp/language/static
 2. C++ 虚函数原理  https://www.cnblogs.com/malecrab/p/5572730.html
 3. C++ 和 C 编译原理 https://www.cnblogs.com/miloyip/archive/2010/09/17/behind_cplusplus.html
 4. external C
 
+
+## The Cherno
 
 ![Screenshot from 2022-01-08 15-40-00](https://user-images.githubusercontent.com/38579506/148636244-13c5214e-ff30-435d-9800-c02e404c904f.png)
