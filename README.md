@@ -20,6 +20,6 @@ Learn c and cpp language. I provide some random exercises when I am learning the
 4. external C
 
 
-## The Cherno
+## The Cherno CPP
 
 ![Screenshot from 2022-01-08 15-40-00](https://user-images.githubusercontent.com/38579506/148636244-13c5214e-ff30-435d-9800-c02e404c904f.png)
