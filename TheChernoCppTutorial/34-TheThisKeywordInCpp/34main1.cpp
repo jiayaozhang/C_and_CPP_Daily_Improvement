@@ -15,9 +15,12 @@ public:
 
 	Entity(int x, int y) 		{
 
+			//d 
 			this -> x = x; 
 			this -> y = y;
 			PrintEntity(this);
+			//this 是自我指针，它的类型是Entity*
+			//
 			// this passes the current instance with the new parameters set in the constrctor
 			PrintEntity2(*this); // dereferencing this
 
