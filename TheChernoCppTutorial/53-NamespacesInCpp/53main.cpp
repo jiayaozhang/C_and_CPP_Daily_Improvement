@@ -26,11 +26,11 @@ named like: "LibName_print" in this way you can be sure about the library functi
 
 // namespace orange {
 
-	void print(const char* text){
-		std::string temp = text; 
-		std::reverse(temp.begin(),temp.end());
-		std::cout << temp << std::endl;
-	}
+	// void print(const char* text){
+	// 	std::string temp = text; 
+	// 	std::reverse(temp.begin(),temp.end());
+	// 	std::cout << temp << std::endl;
+	// }
 // }
 
 // using namespace apple;

@@ -21,11 +21,11 @@ struct Timer{
 	std::chrono::duration<float> duration;
 
 	Timer(){ // constructor
-		start = std::chrono::high_resolution_clock::now();
+		start = std::chrono::steady_clock::now();
 	}
 
 	~Timer(){ // de-structor
-		end = std::chrono::high_resolution_clock::now();
+		end = std::chrono::steady_clock::now();
 		duration = end - start;
 
 		float ms = duration.count() * 1000.0f;
