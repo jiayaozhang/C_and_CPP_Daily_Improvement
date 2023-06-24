@@ -57,7 +57,7 @@ int main(){
 	PrintName(last Name);
 
 	PrintName(firstName1);
-	PrintName(last Name1);
+	PrintName(lastName1);
 
 	PrintName("Cherno"); // I've no allocation with this
 
