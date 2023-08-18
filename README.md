@@ -22,8 +22,5 @@ Learn c and cpp language. I provide some random exercises when I am learning the
 
 ## The Cherno CPP
 
-...
-
-##
-
-![Screenshot from 2022-01-08 15-40-00](https://user-images.githubusercontent.com/38579506/148636244-13c5214e-ff30-435d-9800-c02e404c904f.png)
+![image](https://github.com/jiayaozhang/C_and_CPP_Daily_Improvement/assets/38579506/37e7bbff-c41a-4ccd-bdbe-55e5fae64032)
+![image](https://github.com/jiayaozhang/C_and_CPP_Daily_Improvement/assets/38579506/f65ed8fa-2c75-418a-a671-00c413d2cdff)
