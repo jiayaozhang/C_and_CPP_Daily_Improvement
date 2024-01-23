@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="singleton_demos" Database="" Version="10000">
+  <Project Name="singleton1" Path="singleton1/singleton1.project" Active="No"/>
+  <Project Name="singleton2" Path="singleton2/singleton2.project" Active="No"/>
+  <Project Name="singleton3" Path="singleton3/singleton3.project" Active="No"/>
+  <Project Name="singleton4" Path="singleton4/singleton4.project" Active="No"/>
+  <Project Name="singleton4_1" Path="singleton4_1/singleton4_1.project" Active="No"/>
+  <Project Name="singleton4_2" Path="singleton4_2/singleton4_2.project" Active="No"/>
+  <Project Name="singleton5" Path="singleton5/singleton5.project" Active="No"/>
+  <Project Name="singleton5_1" Path="singleton5_1/singleton5_1.project" Active="No"/>
+  <Project Name="singleton6" Path="singleton6/singleton6.project" Active="No"/>
+  <Project Name="singleton7" Path="singleton7/singleton7.project" Active="No"/>
+  <Project Name="singleton8_1" Path="singleton8_1/singleton8_1.project" Active="No"/>
+  <Project Name="singleton8_2" Path="singleton8_2/singleton8_2.project" Active="No"/>
+  <Project Name="singleton9" Path="singleton9/singleton9.project" Active="Yes"/>
+  <Project Name="singleton8_3" Path="singleton8_3/singleton8_3.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="singleton1" ConfigName="Debug"/>
+      <Project Name="singleton2" ConfigName="Debug"/>
+      <Project Name="singleton3" ConfigName="Debug"/>
+      <Project Name="singleton4" ConfigName="Debug"/>
+      <Project Name="singleton4_1" ConfigName="Debug"/>
+      <Project Name="singleton4_2" ConfigName="Debug"/>
+      <Project Name="singleton5" ConfigName="Debug"/>
+      <Project Name="singleton5_1" ConfigName="Debug"/>
+      <Project Name="singleton6" ConfigName="Debug"/>
+      <Project Name="singleton7" ConfigName="Debug"/>
+      <Project Name="singleton8" ConfigName="Debug"/>
+      <Project Name="singleton9" ConfigName="Debug"/>
+      <Project Name="singleton8_1" ConfigName="Debug"/>
+      <Project Name="singleton8_2" ConfigName="Debug"/>
+      <Project Name="singleton9" ConfigName="Debug"/>
+      <Project Name="singleton8_3" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="singleton1" ConfigName="Release"/>
+      <Project Name="singleton2" ConfigName="Release"/>
+      <Project Name="singleton3" ConfigName="Release"/>
+      <Project Name="singleton4" ConfigName="Release"/>
+      <Project Name="singleton4_1" ConfigName="Release"/>
+      <Project Name="singleton4_2" ConfigName="Release"/>
+      <Project Name="singleton5" ConfigName="Release"/>
+      <Project Name="singleton5_1" ConfigName="Release"/>
+      <Project Name="singleton6" ConfigName="Release"/>
+      <Project Name="singleton7" ConfigName="Release"/>
+      <Project Name="singleton8" ConfigName="Release"/>
+      <Project Name="singleton9" ConfigName="Release"/>
+      <Project Name="singleton8_1" ConfigName="Release"/>
+      <Project Name="singleton8_2" ConfigName="Release"/>
+      <Project Name="singleton9" ConfigName="Release"/>
+      <Project Name="singleton8_3" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

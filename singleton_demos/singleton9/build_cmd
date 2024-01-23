@@ -1,0 +1,5 @@
+g++ -c ./main.cpp
+g++ -c ./src.cpp
+g++ ./main.o ./src.o -o ./ms
+g++ ./src.o ./main.o -o ./sm
+

@@ -1,0 +1,1 @@
+../build-Debug/singleton8/main.cpp.o
